@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>vaadin-addons</artifactId>
+    <packaging>pom</packaging>
+  <parent>
+    <groupId>de.mhus.ports</groupId>
+    <version>1.3.1-SNAPSHOT</version>
+    <artifactId>mhus-ports</artifactId>
+  </parent>
+
+  <modules>
+  	<module>vaadin-easyuploads</module>
+  	<module>vaadin-viritin</module>
+  	<module>vaadin-borderlayout</module>
+  	<module>vaadin-sliderpanel</module>
+  	<module>vaadin-portallayout</module>
+  	<module>vaadin-aceeditor</module>
+  	<module>vaadin-jfreechart</module>
+  </modules>
+  <properties>
+      <bndlib.version>1.50.0</bndlib.version>
+        <felix.metatype.version>1.0.10</felix.metatype.version>
+		<compileSource>1.8</compileSource>
+		<osgi.version>5.0.0</osgi.version>
+        <bundle.plugin.version>2.5.3</bundle.plugin.version>
+		<groovy.version>2.4.7</groovy.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+  </properties>
+    
+  
+    <build>
+        <plugins>
+    <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-compiler-plugin</artifactId>
+	    <version>2.0.2</version>
+	    <configuration>
+    	    <source>1.8</source>
+        	<target>1.8</target>
+    	</configuration>
+	  </plugin>  
+	</plugins>  
+</build>
+
+<dependencies>
+
+    	<dependency>
+    		<groupId>com.vaadin</groupId>
+    		<artifactId>vaadin-server</artifactId>
+    		<version>${vaadin.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>com.vaadin</groupId>
+    		<artifactId>vaadin-shared</artifactId>
+    		<version>${vaadin.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>com.vaadin</groupId>
+    		<artifactId>vaadin-client-compiler</artifactId>
+    		<version>${vaadin.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>com.vaadin</groupId>
+    		<artifactId>vaadin-client-compiled</artifactId>
+    		<version>${vaadin.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>com.vaadin</groupId>
+    		<artifactId>vaadin-client</artifactId>
+    		<version>${vaadin.version}</version>
+    	</dependency>
+    <!-- 
+<dependency>
+  <groupId>com.google.gwt</groupId>
+  <artifactId>gwt-user</artifactId>
+  <version>2.4.0</version>
+  <scope>compile</scope>
+</dependency>
+     -->
+    		    
+	</dependencies>
+
+
+	<repositories>
+		<repository>
+		   <id>vaadin-addons</id>
+		   <url>http://maven.vaadin.com/vaadin-addons</url>
+		</repository>
+	</repositories>
+</project>

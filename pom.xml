@@ -80,6 +80,7 @@
     <module>vaadin-shared-deps</module>
     <module>flummi</module>
     <module>groovy</module>
+    <module>vaadin-addons</module>
     </modules>
 
    <build>

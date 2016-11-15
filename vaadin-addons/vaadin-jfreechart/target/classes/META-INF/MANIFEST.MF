@@ -1,0 +1,112 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Bnd-LastModified: 1479246750941
+BNDPrependExtension-Import-Package: !org.apache.karaf.util.tracker.annot
+ ation
+Build-Jdk: 1.8.0_66
+Built-By: mikehummel
+Bundle-ClassPath: .,jfreechartwrapper-3.0.3.jar
+Bundle-Description: A set of tools to improve OSGi frameworks and karaf
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: vaadin-jfreechart
+Bundle-SymbolicName: vaadin-jfreechart
+Bundle-Version: 1.3.1.SNAPSHOT
+Class-Path: vaadin-server-7.6.6.jar vaadin-sass-compiler-0.9.13.jar sac-
+ 1.3.jar flute-1.3.0.gg2.jar yuicompressor-2.4.8.jar js-1.7R2.jar vaadin
+ -shared-7.6.6.jar streamhtmlparser-jsilver-0.0.10.vaadin1.jar guava-16.
+ 0.1.vaadin1.jar jsoup-1.8.3.jar jfreechart-1.0.13.jar batik-svggen-1.7.
+ jar batik-awt-util-1.7.jar batik-util-1.7.jar xml-apis-1.3.04.jar jcomm
+ on-1.0.15.jar servlet-api-2.5.jar
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: jfreechartwrapper,jfreechart,jcommon,batik-svggen,bati
+ k-awt-util,batik-util,xml-apis
+Embedded-Artifacts: jfreechartwrapper-3.0.3.jar;g="org.vaadin.addon";a="
+ jfreechartwrapper";v="3.0.3"
+Export-Package: org.vaadin.jfreechart;version="1.3.1.SNAPSHOT";uses:="or
+ g.jfree.chart",org.jfree.chart;version="1.3.1.SNAPSHOT";uses:="javax.sw
+ ing,org.jfree.chart.annotations,org.jfree.chart.axis,org.jfree.chart.bl
+ ock,org.jfree.chart.entity,org.jfree.chart.event,org.jfree.chart.imagem
+ ap,org.jfree.chart.panel,org.jfree.chart.plot,org.jfree.chart.renderer,
+ org.jfree.chart.renderer.category,org.jfree.chart.renderer.xy,org.jfree
+ .chart.title,org.jfree.data.category,org.jfree.data.general,org.jfree.d
+ ata.statistics,org.jfree.data.xy,org.jfree.ui,org.jfree.ui.about,org.jf
+ ree.util",org.jfree.chart.annotations;version="1.3.1.SNAPSHOT";uses:="o
+ rg.jfree.chart.axis,org.jfree.chart.plot,org.jfree.chart.title,org.jfre
+ e.chart.util,org.jfree.data,org.jfree.ui,org.jfree.util",org.jfree.char
+ t.axis;version="1.3.1.SNAPSHOT";uses:="org.jfree.chart.event,org.jfree.
+ chart.plot,org.jfree.data,org.jfree.data.category,org.jfree.data.time,o
+ rg.jfree.text,org.jfree.ui,org.jfree.util",org.jfree.chart.block;versio
+ n="1.3.1.SNAPSHOT";uses:="org.jfree.chart.entity,org.jfree.data,org.jfr
+ ee.text,org.jfree.ui,org.jfree.util",org.jfree.chart.demo;version="1.3.
+ 1.SNAPSHOT";uses:="javax.swing,org.jfree.ui",org.jfree.chart.editor;ver
+ sion="1.3.1.SNAPSHOT";uses:="javax.swing,org.jfree.chart,org.jfree.char
+ t.plot",org.jfree.chart.encoders;version="1.3.1.SNAPSHOT",org.jfree.cha
+ rt.entity;version="1.3.1.SNAPSHOT";uses:="org.jfree.chart,org.jfree.cha
+ rt.axis,org.jfree.chart.imagemap,org.jfree.chart.plot,org.jfree.chart.t
+ itle,org.jfree.data.category,org.jfree.data.general,org.jfree.data.xy,o
+ rg.jfree.util",org.jfree.chart.event;version="1.3.1.SNAPSHOT";uses:="or
+ g.jfree.chart,org.jfree.chart.axis,org.jfree.chart.plot,org.jfree.chart
+ .title",org.jfree.chart.imagemap;version="1.3.1.SNAPSHOT";uses:="org.jf
+ ree.chart",org.jfree.chart.labels;version="1.3.1.SNAPSHOT";uses:="org.j
+ free.chart.plot,org.jfree.data.category,org.jfree.data.contour,org.jfre
+ e.data.general,org.jfree.data.xy,org.jfree.ui,org.jfree.util",org.jfree
+ .chart.needle;version="1.3.1.SNAPSHOT",org.jfree.chart.panel;version="1
+ .3.1.SNAPSHOT";uses:="org.jfree.chart,org.jfree.chart.event,org.jfree.c
+ hart.plot,org.jfree.util",org.jfree.chart.plot;version="1.3.1.SNAPSHOT"
+ ;uses:="javax.swing,org.jfree.chart,org.jfree.chart.annotations,org.jfr
+ ee.chart.axis,org.jfree.chart.event,org.jfree.chart.labels,org.jfree.ch
+ art.needle,org.jfree.chart.renderer,org.jfree.chart.renderer.category,o
+ rg.jfree.chart.renderer.xy,org.jfree.chart.title,org.jfree.chart.urls,o
+ rg.jfree.data,org.jfree.data.category,org.jfree.data.contour,org.jfree.
+ data.general,org.jfree.data.xy,org.jfree.text,org.jfree.ui,org.jfree.ut
+ il",org.jfree.chart.plot.dial;version="1.3.1.SNAPSHOT";uses:="org.jfree
+ .chart.event,org.jfree.chart.plot,org.jfree.data.general,org.jfree.ui,o
+ rg.jfree.util",org.jfree.chart.renderer;version="1.3.1.SNAPSHOT";uses:=
+ "org.jfree.chart,org.jfree.chart.axis,org.jfree.chart.entity,org.jfree.
+ chart.event,org.jfree.chart.labels,org.jfree.chart.plot,org.jfree.data.
+ xy,org.jfree.util",org.jfree.chart.renderer.category;version="1.3.1.SNA
+ PSHOT";uses:="javax.swing,org.jfree.chart,org.jfree.chart.axis,org.jfre
+ e.chart.entity,org.jfree.chart.event,org.jfree.chart.labels,org.jfree.c
+ hart.plot,org.jfree.chart.renderer,org.jfree.chart.urls,org.jfree.data,
+ org.jfree.data.category,org.jfree.data.gantt,org.jfree.data.statistics,
+ org.jfree.ui,org.jfree.util",org.jfree.chart.renderer.xy;version="1.3.1
+ .SNAPSHOT";uses:="org.jfree.chart,org.jfree.chart.annotations,org.jfree
+ .chart.axis,org.jfree.chart.entity,org.jfree.chart.event,org.jfree.char
+ t.labels,org.jfree.chart.plot,org.jfree.chart.renderer,org.jfree.chart.
+ urls,org.jfree.data,org.jfree.data.general,org.jfree.data.xy,org.jfree.
+ ui,org.jfree.util",org.jfree.chart.resources;version="1.3.1.SNAPSHOT",o
+ rg.jfree.chart.servlet;version="1.3.1.SNAPSHOT";uses:="javax.servlet,ja
+ vax.servlet.http,org.jfree.chart",org.jfree.chart.title;version="1.3.1.
+ SNAPSHOT";uses:="org.jfree.chart,org.jfree.chart.axis,org.jfree.chart.b
+ lock,org.jfree.chart.event,org.jfree.chart.renderer,org.jfree.data,org.
+ jfree.data.general,org.jfree.ui,org.jfree.util",org.jfree.chart.urls;ve
+ rsion="1.3.1.SNAPSHOT";uses:="org.jfree.data.category,org.jfree.data.ge
+ neral,org.jfree.data.xy,org.jfree.util",org.jfree.chart.util;version="1
+ .3.1.SNAPSHOT"
+Implementation-Title: JFreeChart wrapper for Vaadin
+Implementation-Vendor-Id: org.vaadin.addon
+Implementation-Version: 3.0.3
+Import-Package: com.keypoint;resolution:=optional,com.vaadin.server;reso
+ lution:=optional;version="[7.7,8)",com.vaadin.ui;resolution:=optional;v
+ ersion="[7.7,8)",javax.imageio;resolution:=optional,javax.imageio.metad
+ ata;resolution:=optional,javax.imageio.stream;resolution:=optional,java
+ x.servlet;resolution:=optional,javax.servlet.http;resolution:=optional,
+ javax.swing;resolution:=optional,javax.swing.border;resolution:=optiona
+ l,javax.swing.event;resolution:=optional,javax.swing.filechooser;resolu
+ tion:=optional,javax.xml.parsers;resolution:=optional,org.apache.batik.
+ svggen;resolution:=optional,org.jfree;resolution:=optional,org.jfree.ba
+ se;resolution:=optional,org.jfree.chart;resolution:=optional;version="[
+ 1.3,2)",org.jfree.data;resolution:=optional,org.jfree.data.category;res
+ olution:=optional,org.jfree.data.contour;resolution:=optional,org.jfree
+ .data.gantt;resolution:=optional,org.jfree.data.general;resolution:=opt
+ ional,org.jfree.data.statistics;resolution:=optional,org.jfree.data.tim
+ e;resolution:=optional,org.jfree.data.xy;resolution:=optional,org.jfree
+ .io;resolution:=optional,org.jfree.layout;resolution:=optional,org.jfre
+ e.text;resolution:=optional,org.jfree.ui;resolution:=optional,org.jfree
+ .ui.about;resolution:=optional,org.jfree.util;resolution:=optional,org.
+ w3c.dom;resolution:=optional
+Originally-Created-By: Apache Maven
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.3.0.201405100607
+Vaadin-Package-Version: 1
