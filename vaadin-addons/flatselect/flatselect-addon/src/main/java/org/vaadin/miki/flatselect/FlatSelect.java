@@ -2,6 +2,10 @@ package org.vaadin.miki.flatselect;
 
 import com.vaadin.data.Container;
 import com.vaadin.ui.AbstractSelect;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
+
 import org.vaadin.miki.flatselect.client.FlatSelectServerRpc;
 import org.vaadin.miki.flatselect.client.FlatSelectState;
 
@@ -50,6 +54,8 @@ public class FlatSelect extends AbstractSelect {
             setValue(null);
         else
             setValue(new ArrayList<>(this.getContainerDataSource().getItemIds()).get(index));
+        
+        fireEvent(new Button.ClickEvent(this));
     }
 
     public void setOptionsPerRow(int optionsPerRow) {
@@ -100,4 +106,15 @@ public class FlatSelect extends AbstractSelect {
     protected FlatSelectState getState() {
         return (FlatSelectState) super.getState();
     }
+    
+    public void addClickListener(ClickListener listener) {
+        addListener(ClickEvent.class, listener,
+                ClickListener.BUTTON_CLICK_METHOD);
+    }
+
+    public void removeClickListener(ClickListener listener) {
+        removeListener(ClickEvent.class, listener,
+                ClickListener.BUTTON_CLICK_METHOD);
+    }
+
 }
