@@ -22,22 +22,30 @@ public class FlatSelectWidget extends VerticalPanel {
         }
     }
 
-    public void setOptions(final Callback callback, String[] options, int optionsPerRow, int value) {
+    public void setOptions(final Callback callback, String[] options, int optionsPerRow, int value, String optionWidth) {
         this.clear();
         HorizontalPanel panel = null;
         if(optionsPerRow <= 0) {
             panel = new HorizontalPanel();
             this.add(panel);
+            if (optionWidth != null && optionWidth.endsWith("%"))
+            	panel.setWidth("100%");
         }
         for(int zmp1=0; zmp1<options.length; zmp1++) {
                 if ((optionsPerRow > 0) && (zmp1 % optionsPerRow) == 0) {
                     panel = new HorizontalPanel();
                     this.add(panel);
+                    if (optionWidth != null && optionWidth.endsWith("%"))
+                    	panel.setWidth("100%");
                 }
 
 
             OptionButton btn = new OptionButton(options[zmp1], zmp1);
             panel.add(btn);
+            
+            if (optionWidth != null)
+            	btn.setWidth(optionWidth);
+            
             if(zmp1 == value)
                 btn.addStyleName("selected");
             else

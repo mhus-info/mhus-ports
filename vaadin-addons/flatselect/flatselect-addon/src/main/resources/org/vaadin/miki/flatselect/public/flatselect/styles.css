@@ -9,6 +9,7 @@ div.flatselect {
 div.flatselect button {
 	border: none;
 	text-decoration: none;
+	margin-right: 1px;
 }
 
 div.flatselect button:hover {
@@ -16,7 +17,31 @@ div.flatselect button:hover {
 	color: blue;
 }
 
-div.flatselect .selected {
+div.flatlabel {
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+div.flatlabel button {
+	border: none;
+	text-decoration: underline;
+	margin-right: 1px;
+	background: none;
+}
+
+div.flatlabel button:hover {
+	text-decoration: underline;
+	color: blue;
+}
+
+div.flatselectable .selected {
 	font-weight: bold;
 	color: navy;
+}
+
+div.flatleft button {
+	text-align: left;
 }

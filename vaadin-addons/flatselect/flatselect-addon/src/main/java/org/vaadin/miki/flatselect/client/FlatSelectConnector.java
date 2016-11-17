@@ -41,6 +41,6 @@ public class FlatSelectConnector extends AbstractComponentConnector {
     @Override
     public void onStateChanged(StateChangeEvent stateChangeEvent) {
         super.onStateChanged(stateChangeEvent);
-        getWidget().setOptions(callback, getState().options, getState().optionsPerRow, getState().value);
+        getWidget().setOptions(callback, getState().options, getState().optionsPerRow, getState().value, getState().optionsWidth);
     }
 }

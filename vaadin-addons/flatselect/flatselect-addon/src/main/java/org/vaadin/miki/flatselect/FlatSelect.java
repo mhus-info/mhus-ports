@@ -60,6 +60,13 @@ public class FlatSelect extends AbstractSelect {
         return getState(false).optionsPerRow;
     }
         
+    public void setOptionsWidth(String width) {
+        getState().optionsWidth = width;
+    }
+
+    public String getOptionsWidth() {
+        return getState(false).optionsWidth;
+    }
 
     private void updateOptions() {
         getState().options =
