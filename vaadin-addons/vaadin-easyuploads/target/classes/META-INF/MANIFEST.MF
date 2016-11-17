@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1479246720695
+Archiver-Version: Plexus Archiver
+Bnd-LastModified: 1479386248955
 BNDPrependExtension-Import-Package: !org.apache.karaf.util.tracker.annot
  ation
 Build-Jdk: 1.8.0_66
@@ -11,26 +12,34 @@ Bundle-ManifestVersion: 2
 Bundle-Name: vaadin-easyuploads
 Bundle-SymbolicName: vaadin-easyuploads
 Bundle-Version: 1.3.1.SNAPSHOT
+Class-Path: viritin-1.53.jar confirmdialog-2.1.3.jar markdown4j-2.2-cj-1
+ .1.jar commons-io-2.4.jar commons-beanutils-1.9.2.jar commons-logging-1
+ .1.1.jar commons-collections-3.2.1.jar commons-lang3-3.4.jar javax.el-a
+ pi-2.2.4.jar
 Created-By: Apache Maven Bundle Plugin
 Embed-Dependency: easyuploads
 Embedded-Artifacts: easyuploads-7.4.10.jar;g="org.vaadin.addon";a="easyu
  ploads";v="7.4.10"
 Export-Package: org.swfupload;version="1.3.1.SNAPSHOT",org.swfupload.cli
- ent;version="1.3.1.SNAPSHOT";uses:="com.google.gwt.core.client,com.goog
- le.gwt.resources.client,org.swfupload.client.event",org.swfupload.clien
- t.event;version="1.3.1.SNAPSHOT";uses:="org.swfupload.client",org.swfup
- load.public;version="1.3.1.SNAPSHOT",org.vaadin.easyuploads;version="1.
- 3.1.SNAPSHOT";uses:="com.vaadin.data,com.vaadin.event.dd,com.vaadin.eve
- nt.dd.acceptcriteria,com.vaadin.server,com.vaadin.shared.communication,
- com.vaadin.ui,org.vaadin.easyuploads.client",org.vaadin.easyuploads.cli
- ent;version="1.3.1.SNAPSHOT";uses:="com.google.gwt.user.client.ui,com.v
- aadin.client,com.vaadin.client.communication,com.vaadin.client.extensio
- ns,com.vaadin.shared.communication,com.vaadin.shared.ui,org.vaadin.easy
- uploads",org.vaadin.easyuploads.client.ui;version="1.3.1.SNAPSHOT";uses
- :="com.google.gwt.user.client,com.google.gwt.user.client.ui,com.vaadin.
- client,com.vaadin.client.ui,com.vaadin.client.ui.dd,com.vaadin.shared.u
- i,org.vaadin.easyuploads,org.vaadin.easyuploads.client",org.vaadin.easy
+ ent;uses:="com.google.gwt.core.client,com.google.gwt.resources.client,o
+ rg.swfupload.client.event";version="1.3.1.SNAPSHOT",org.swfupload.clien
+ t.event;uses:="org.swfupload.client";version="1.3.1.SNAPSHOT",org.swfup
+ load.public;version="1.3.1.SNAPSHOT",org.vaadin.easyuploads;uses:="com.
+ vaadin.data,com.vaadin.event.dd,com.vaadin.event.dd.acceptcriteria,com.
+ vaadin.server,com.vaadin.shared.communication,com.vaadin.ui,org.vaadin.
+ easyuploads.client";version="1.3.1.SNAPSHOT",org.vaadin.easyuploads.cli
+ ent;uses:="com.google.gwt.user.client.ui,com.vaadin.client,com.vaadin.c
+ lient.communication,com.vaadin.client.extensions,com.vaadin.shared.comm
+ unication,com.vaadin.shared.ui,org.vaadin.easyuploads";version="1.3.1.S
+ NAPSHOT",org.vaadin.easyuploads.client.ui;uses:="com.google.gwt.user.cl
+ ient,com.google.gwt.user.client.ui,com.vaadin.client,com.vaadin.client.
+ ui,com.vaadin.client.ui.dd,com.vaadin.shared.ui,org.vaadin.easyuploads,
+ org.vaadin.easyuploads.client";version="1.3.1.SNAPSHOT",org.vaadin.easy
  uploads.public;version="1.3.1.SNAPSHOT"
+Implementation-Title: EasyUploads
+Implementation-Vendor: Vaadin Community
+Implementation-Vendor-Id: org.vaadin.addon
+Implementation-Version: 7.4.10
 Import-Package: com.google.gwt.core.client;resolution:=optional,com.goog
  le.gwt.dom.client;resolution:=optional,com.google.gwt.event.dom.client;
  resolution:=optional,com.google.gwt.event.shared;resolution:=optional,c
@@ -53,6 +62,8 @@ Import-Package: com.google.gwt.core.client;resolution:=optional,com.goog
  om.vaadin.ui;resolution:=optional;version="[7.7,8)",javax.imageio;resol
  ution:=optional,org.apache.commons.io;resolution:=optional;version="[1.
  4,2)",org.vaadin.viritin.label;resolution:=optional;version="[1.53,2)"
-Originally-Created-By: Apache Maven Bundle Plugin
+Originally-Created-By: Apache Maven
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
 Tool: Bnd-2.3.0.201405100607
+Vaadin-Package-Version: 1
+Vaadin-Widgetsets: org.vaadin.easyuploads.Widgetset

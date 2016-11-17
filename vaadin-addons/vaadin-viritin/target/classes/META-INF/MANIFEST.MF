@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1479246725930
+Bnd-LastModified: 1479386253996
 BNDPrependExtension-Import-Package: !org.apache.karaf.util.tracker.annot
  ation
 Build-Jdk: 1.8.0_66

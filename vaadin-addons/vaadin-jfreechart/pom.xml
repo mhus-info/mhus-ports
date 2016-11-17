@@ -22,11 +22,11 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
                         	org.vaadin.jfreechart.*,
-                        	org.jfree.chart.*,
+                        	org.jfree.*,
                         	META-INF*
                         </Export-Package>
                         <Import-Package>*;resolution:=optional</Import-Package>
-						<Embed-Dependency>jfreechartwrapper,jfreechart,jcommon,batik-svggen,batik-awt-util,batik-util,xml-apis</Embed-Dependency>
+						<Embed-Dependency>jfreechartwrapper,jfreechart,jcommon,batik-svggen,batik-awt-util,batik-util</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
@@ -42,6 +42,33 @@
 	   <version>3.0.3</version>
 	</dependency>
 
+	<dependency>
+	  <groupId>jfree</groupId>
+	  <artifactId>jcommon</artifactId>
+  	  <version>1.0.15</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.xmlgraphics</groupId>
+	  <artifactId>batik-svggen</artifactId>
+	  <version>1.7</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.xmlgraphics</groupId>
+	  <artifactId>batik-awt-util</artifactId>
+	  <version>1.7</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.xmlgraphics</groupId>
+	  <artifactId>batik-util</artifactId>
+	  <version>1.7</version>
+	</dependency>
+
+  	<dependency>
+  		<groupId>javax.portlet</groupId>
+  		<artifactId>portlet-api</artifactId>
+  		<version>2.0</version>
+  	</dependency>
+	
 </dependencies>
 
 </project>

@@ -13,6 +13,7 @@
   	<module>vaadin-viritin</module>
   	<module>vaadin-borderlayout</module>
   	<module>vaadin-sliderpanel</module>
+  	<module>PortalLayout</module>
   	<module>vaadin-portallayout</module>
   	<module>vaadin-aceeditor</module>
   	<module>vaadin-jfreechart</module>

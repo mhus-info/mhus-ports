@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.0" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:xl="http://www.w3.org/1999/xlink">
+    <info>
+        <title>MyAddon 0.0.1 Manual</title>
+        <author>
+            <personname>
+                <firstname>Aleksandr</firstname>
+                <surname>Pchelintcev</surname>
+            </personname>
+            <email>aleksandr@vaadin.com</email>
+        </author>
+        <copyright>
+            <year>2013</year>
+            <holder>Vaadin</holder>
+        </copyright>
+    </info>
+
+    <section xml:id="introduction">
+        <title>Introduction</title>
+        <para>
+            Documentation of the PortalLayout add-on for Vaadin 7 (<link xl:href="https://vaadin.com/directory#addon/portallayout:vaadin"></link>).
+            The primary target of an add-on is to provide an easy way to build the portal-like structures. Given a child component <classname>PortalLayout</classname>
+            wraps it into a <classname>Portlet</classname> instance which is draggable by its header, optionally closable, collapsible and may contain an 
+            additional toolbar. The DOM structure of <classname>PortalLayout</classname> is rather simplistic - it stacks the children one above another, but 
+            more complex views can be achieved as different instances of <classname>PortalLayout</classname> can exchange their <classname>Portlets</classname>
+            out-of-the-box, so by merely putting several <classname>PortalLayouts</classname> side-by-side or even in different parts of the view the 
+            developer instantly achieves highly interactive and customizable UI.  
+        </para>
+    </section>
+
+    <section xml:id="usage">
+        <title>Using PortalLayout for Vaadin7</title>
+        <para>
+        	<classname>PortalLayout</classname> is a simple component that implements <interfacename>HasComponents</interfacename> interface.
+        	It wraps other comonents in <classname>Portlets</classname> and renders them in a stack. In order to add a component to 
+        	<classname>PortalLayout</classname> one should call the following:  
+        	            <programlisting language="java"><![CDATA[
+
+    private void createPortal() {
+       ....
+       final PortalLayout portalLayout = new PortalLayout();
+       ....
+       Component childComponent = new TextArea();
+       Portlet portlet = portalLayout.wrapInPortlet(childComponent);
+       ....
+    }
+                ]]></programlisting>
+        </para>
+        
+        <para>
+        	The <classname>Portlet</classname> is a child class of an <classname>AbstractExtension</classname>. On the client-side it is responsible for 
+        	providing a chrome for a wrapped component: draggable area (header), caption and icon areas, controls for close/collapse. Portlet provides basic setter/getter methods on the server-side:
+        	        	            <programlisting language="java"><![CDATA[
+
+    public void setCollapsed(boolean collapsed) {}
+    
+    public void setClosable(boolean closable) {}
+    
+    public void setCollapsible(boolean collapsible) {}
+    
+    public void setLocked(boolean locked) {}
+    
+    public boolean isLocked() {}
+    
+    public boolean isCollapsed() {}
+    
+    public boolean isCollapsible() {}
+    
+    public boolean isClosable() {}
+                ]]></programlisting>
+		</para>
+		
+		<para>
+			<classname>PortalLayout</classname> allows for portlet exchange between instances out of the box. 
+		</para>
+    </section>
+</article>

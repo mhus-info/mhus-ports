@@ -28,19 +28,21 @@
 						<Embed-Dependency>PortalLayout</Embed-Dependency>
                     </instructions>
                 </configuration>
-            </plugin>
+            </plugin>            
 	</plugins>  
 </build>
 
 <dependencies>
 
    	<!-- https://vaadin.com/directory#!addon/portallayout -->
+   	<!-- https://github.com/p4elkin/PortalLayout -->
+   	
 	<dependency>
 	   <groupId>org.vaadin.addons</groupId>
 	   <artifactId>PortalLayout</artifactId>
-	   <version>2.0.alpha6</version>
+	   <version>2.0.mhu1</version>
 	</dependency>
-	    
+   	
 </dependencies>
 
 </project>
