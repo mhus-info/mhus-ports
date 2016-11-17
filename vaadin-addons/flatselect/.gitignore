@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea/
+/flatselect-addon/flatselect (1).iml
+/flatselect-addon/target/
+/flatselect-demo/target/
+/flatselect-demo/flatselect-demo.iml
+/flatselect.iml

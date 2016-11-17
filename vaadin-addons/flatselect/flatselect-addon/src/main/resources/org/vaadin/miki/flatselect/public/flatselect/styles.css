@@ -1,0 +1,22 @@
+div.flatselect {
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+div.flatselect button {
+	border: none;
+	text-decoration: none;
+}
+
+div.flatselect button:hover {
+	text-decoration: underline;
+	color: blue;
+}
+
+div.flatselect .selected {
+	font-weight: bold;
+	color: navy;
+}
