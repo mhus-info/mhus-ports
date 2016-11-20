@@ -9,6 +9,7 @@
   </parent>
 
   <modules>
+  	<module>easyuploads</module>
   	<module>vaadin-easyuploads</module>
   	<module>vaadin-viritin</module>
   	<module>vaadin-borderlayout</module>
