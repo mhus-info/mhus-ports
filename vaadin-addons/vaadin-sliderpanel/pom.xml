@@ -38,7 +38,7 @@
 	<dependency>
 	   <groupId>org.vaadin.addons</groupId>
 	   <artifactId>vaadin-sliderpanel</artifactId>
-	   <version>1.4.2</version>
+	   <version>1.4.3-mhus1</version>
 	</dependency>
 	    
 </dependencies>

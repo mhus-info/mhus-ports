@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Archiver-Version: Plexus Archiver
-Bnd-LastModified: 1479386263487
+Bnd-LastModified: 1480082801518
 BNDPrependExtension-Import-Package: !org.apache.karaf.util.tracker.annot
  ation
 Build-Jdk: 1.8.0_66
 Built-By: mikehummel
-Bundle-ClassPath: .,vaadin-sliderpanel-1.4.2.jar
+Bundle-ClassPath: .,vaadin-sliderpanel-1.4.3-mhus1.jar
 Bundle-Description: A set of tools to improve OSGi frameworks and karaf
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
 Bundle-ManifestVersion: 2
@@ -14,8 +14,8 @@ Bundle-SymbolicName: vaadin-sliderpanel
 Bundle-Version: 1.3.1.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
 Embed-Dependency: vaadin-sliderpanel
-Embedded-Artifacts: vaadin-sliderpanel-1.4.2.jar;g="org.vaadin.addons";a
- ="vaadin-sliderpanel";v="1.4.2"
+Embedded-Artifacts: vaadin-sliderpanel-1.4.3-mhus1.jar;g="org.vaadin.add
+ ons";a="vaadin-sliderpanel";v="1.4.3-mhus1"
 Export-Package: org.vaadin.sliderpanel;version="1.4.2";uses:="com.vaadin
  .server,com.vaadin.shared,com.vaadin.shared.communication,com.vaadin.ui
  ,org.vaadin.sliderpanel.client",org.vaadin.sliderpanel.client;version="
@@ -23,7 +23,7 @@ Export-Package: org.vaadin.sliderpanel;version="1.4.2";uses:="com.vaadin
  com.vaadin.client,com.vaadin.client.communication,com.vaadin.client.ui,
  com.vaadin.shared,com.vaadin.shared.communication,com.vaadin.shared.ui,
  org.vaadin.sliderpanel",org.vaadin.sliderpanel.components;version="1.4.
- 2",org.vaadin.sliderpanel.public.sliderpanel;version="1.4.2"
+ 2",org.vaadin.sliderpanel.public.sliderpanel;version="1.4.3.mhus1"
 Implementation-Title: SliderPanel
 Implementation-Vendor: Marten Prieß
 Implementation-Vendor-Id: org.vaadin.addons

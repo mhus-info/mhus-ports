@@ -13,6 +13,7 @@
   	<module>vaadin-easyuploads</module>
   	<module>vaadin-viritin</module>
   	<module>vaadin-borderlayout</module>
+  	<module>sliderpanel</module>
   	<module>vaadin-sliderpanel</module>
   	<module>PortalLayout</module>
   	<module>vaadin-portallayout</module>
