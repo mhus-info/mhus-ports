@@ -58,6 +58,7 @@
                         	org.codehaus.groovy.*;version=${groovy.version}
                         </Export-Package>
                         <Import-Package>*;resolution:=optional</Import-Package>
+						<DynamicImport-Package>*</DynamicImport-Package>
 						<Embed-Dependency>groovy-all</Embed-Dependency>
                     	<Embed-Transitive>true</Embed-Transitive>
                     </instructions>
