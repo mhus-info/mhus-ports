@@ -22,6 +22,7 @@
   	<module>flatselect</module>
   	<module>vaadin-flatselect</module>
   	<module>vaadin-contextmenu</module>
+  	<module>vaadin-refresher</module>
   </modules>
   <properties>
       <bndlib.version>1.50.0</bndlib.version>
