@@ -75,7 +75,7 @@ public class SliderPanelConnector extends AbstractSingleComponentContainerConnec
     public void onStateChanged(final StateChangeEvent stateChangeEvent) {
         super.onStateChanged(stateChangeEvent);
 
-        getWidget().configure(getState().mode, getState().flowInContent, getState().tabPosition, getState().pixel);
+        getWidget().configure(getState().mode, getState().flowInContent, getState().tabPosition, getState().pixel, getState().tabStyle);
 
         if (stateChangeEvent.hasPropertyChanged("animationDuration")) {
             getWidget().setAnimationDuration(getState().animationDuration);
@@ -110,7 +110,7 @@ public class SliderPanelConnector extends AbstractSingleComponentContainerConnec
     @Override
     public void layout() {
         // in case onStateChanged is not fired before
-        getWidget().configure(getState().mode, getState().flowInContent, getState().tabPosition, getState().pixel);
+        getWidget().configure(getState().mode, getState().flowInContent, getState().tabPosition, getState().pixel, getState().tabStyle);
         getWidget().initialize(getState().expand, getState().tabSize);
     }
 

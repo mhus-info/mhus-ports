@@ -7,7 +7,7 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>vaadin-sliderpanel-sample</artifactId>
+	<artifactId>sliderpanel-sample</artifactId>
 	<packaging>war</packaging>
 
 	<developers>
@@ -29,7 +29,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.vaadin.addons</groupId>
-			<artifactId>vaadin-sliderpanel</artifactId>
+			<artifactId>sliderpanel</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

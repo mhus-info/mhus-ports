@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.vaadin.addons</groupId>
-	<artifactId>vaadin-sliderpanel</artifactId>
+	<artifactId>sliderpanel</artifactId>
 	<version>1.4.3-mhus1</version>
 	<packaging>jar</packaging>
 

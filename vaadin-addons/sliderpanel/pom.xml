@@ -8,8 +8,8 @@
 	<version>1.4.3-mhus1</version>
 
 	<modules>
-		<module>vaadin-sliderpanel</module>
-		<module>vaadin-sliderpanel-sample</module>
+		<module>sliderpanel</module>
+		<module>sliderpanel-sample</module>
 	</modules>
 
 	<developers>

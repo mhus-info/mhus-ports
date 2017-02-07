@@ -43,6 +43,8 @@ public class SliderPanelBuilder {
     protected boolean autoCollapseSlider = false;
 
     protected int zIndex = 9990;
+
+    protected String tabStyle = "";
     
 
 	/**
@@ -157,6 +159,19 @@ public class SliderPanelBuilder {
 	 */
 	public SliderPanelBuilder tabPosition(final SliderTabPosition tabPosition) {
 		this.tabPosition = tabPosition;
+		return this;
+	}
+
+	/**
+	 * Which type of display you want to have<br>
+	 * This controls the position of the navigation element within the {@link SliderPanel} total area
+	 * 
+	 * @param tabPosition
+	 *            default <b>BEGINNING</b>
+	 * @return builder
+	 */
+	public SliderPanelBuilder tabStyle(final String tabStyle) {
+		this.tabStyle = tabStyle;
 		return this;
 	}
 

@@ -121,6 +121,7 @@ public class SliderPanel extends AbstractSingleComponentContainer {
 		getState().tabSize = builder.tabSize;
 		getState().flowInContent = builder.flowInContent;
 		getState().tabPosition = builder.tabPosition;
+		getState().tabStyle = builder.tabStyle;
 		getState().animationDuration = builder.animationDuration;
         getState().autoCollapseSlider = builder.autoCollapseSlider;
         getState().zIndex = builder.zIndex;
@@ -165,6 +166,16 @@ public class SliderPanel extends AbstractSingleComponentContainer {
 	@Override
 	public void setCaption(final String caption) {
 		getState().caption = caption;
+	}
+
+	/**
+	 * controls the style of the tab-panel<br>
+	 * 
+	 * @param tabStyle
+	 *            by default none
+	 */
+	public void setTabStyle(final String tabStyle) {
+		getState().tabStyle = tabStyle;
 	}
 
 	/**

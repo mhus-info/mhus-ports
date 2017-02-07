@@ -22,4 +22,6 @@ public class SliderPanelState extends AbstractComponentState {
     public int pixel = -1;
     public boolean autoCollapseSlider = false;
     public int zIndex = 9990;
+
+	public String tabStyle = "";
 }

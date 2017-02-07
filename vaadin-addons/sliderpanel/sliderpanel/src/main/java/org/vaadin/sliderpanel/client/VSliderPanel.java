@@ -119,6 +119,11 @@ public class VSliderPanel extends SimplePanel implements NativePreviewHandler {
         }
     }
 
+    private void setTabStyle(final String tabStyle) {
+    	if (tabStyle == null) return;
+    	this.tabElem.setAttribute("style", tabStyle);
+    }
+    
     private void setTabPosition(final SliderTabPosition tabPosition) {
         if (this.tabPosition != null) {
             this.tabElem.removeClassName("tab-" + tabPosition.name()
@@ -129,10 +134,11 @@ public class VSliderPanel extends SimplePanel implements NativePreviewHandler {
         this.tabBaseClassName = this.tabElem.getClassName();
     }
 
-    public void configure(final SliderMode sliderMode, final boolean flowInContent, final SliderTabPosition tabPosition, final Integer pixel) {
+    public void configure(final SliderMode sliderMode, final boolean flowInContent, final SliderTabPosition tabPosition, final Integer pixel, final String tabStyle) {
         if (!this.initialized) {
             setMode(sliderMode, flowInContent);
             setTabPosition(tabPosition);
+            setTabStyle(tabStyle);
             if (pixel > 0) {
                 this.componentSize = pixel;
             }

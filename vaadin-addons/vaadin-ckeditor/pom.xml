@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>vaadin-sliderpanel</artifactId>
+  <artifactId>vaadin-ckeditor</artifactId>
     <packaging>bundle</packaging>
   <parent>
     <groupId>de.mhus.ports</groupId>
@@ -21,26 +21,28 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                        	org.vaadin.sliderpanel.*,
+                        	org.vaadin.openesignforms.ckeditor.*,
                         	META-INF*
                         </Export-Package>
                         <Import-Package>*;resolution:=optional</Import-Package>
-						<Embed-Dependency>vaadin-sliderpanel</Embed-Dependency>
+						<Embed-Dependency>ckeditor-wrapper-for-vaadin</Embed-Dependency>
                     </instructions>
                 </configuration>
-            </plugin>
+            </plugin>            
 	</plugins>  
 </build>
 
 <dependencies>
 
-   	<!-- https://vaadin.com/directory#!addon/sliderpanel -->
-	<dependency>
-	   <groupId>org.vaadin.addons</groupId>
-	   <artifactId>sliderpanel</artifactId>
-	   <version>1.4.3-mhus1</version>
-	</dependency>
-	    
+   	<!-- https://vaadin.com/directory#!addon/ckeditor-wrapper-for-vaadin -->
+   	<!-- https://github.com/OpenESignForms/vaadin-ckeditor/tree/master/VaadinCKEditor -->
+   	
+<dependency>
+   <groupId>org.vaadin.addons</groupId>
+   <artifactId>ckeditor-wrapper-for-vaadin</artifactId>
+   <version>7.11.1</version>
+</dependency>
+
 </dependencies>
 
 </project>
