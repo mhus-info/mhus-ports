@@ -1,11 +1,9 @@
 Manifest-Version: 1.0
-Archiver-Version: Plexus Archiver
-Bnd-LastModified: 1480082801518
+Bnd-LastModified: 1486652826748
 BNDPrependExtension-Import-Package: !org.apache.karaf.util.tracker.annot
  ation
 Build-Jdk: 1.8.0_66
 Built-By: mikehummel
-Bundle-ClassPath: .,vaadin-sliderpanel-1.4.3-mhus1.jar
 Bundle-Description: A set of tools to improve OSGi frameworks and karaf
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
 Bundle-ManifestVersion: 2
@@ -14,20 +12,18 @@ Bundle-SymbolicName: vaadin-sliderpanel
 Bundle-Version: 1.3.1.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
 Embed-Dependency: vaadin-sliderpanel
-Embedded-Artifacts: vaadin-sliderpanel-1.4.3-mhus1.jar;g="org.vaadin.add
- ons";a="vaadin-sliderpanel";v="1.4.3-mhus1"
-Export-Package: org.vaadin.sliderpanel;version="1.4.2";uses:="com.vaadin
- .server,com.vaadin.shared,com.vaadin.shared.communication,com.vaadin.ui
- ,org.vaadin.sliderpanel.client",org.vaadin.sliderpanel.client;version="
- 1.4.2";uses:="com.google.gwt.user.client,com.google.gwt.user.client.ui,
- com.vaadin.client,com.vaadin.client.communication,com.vaadin.client.ui,
- com.vaadin.shared,com.vaadin.shared.communication,com.vaadin.shared.ui,
- org.vaadin.sliderpanel",org.vaadin.sliderpanel.components;version="1.4.
- 2",org.vaadin.sliderpanel.public.sliderpanel;version="1.4.3.mhus1"
+Export-Package: org.vaadin.sliderpanel;version="1.4.3.mhus1";uses:="com.
+ vaadin.server,com.vaadin.shared,com.vaadin.ui,org.vaadin.sliderpanel.cl
+ ient",org.vaadin.sliderpanel.client;version="1.4.3.mhus1";uses:="com.go
+ ogle.gwt.user.client,com.google.gwt.user.client.ui,com.vaadin.client,co
+ m.vaadin.client.communication,com.vaadin.client.ui,com.vaadin.shared,co
+ m.vaadin.shared.communication,com.vaadin.shared.ui,org.vaadin.sliderpan
+ el",org.vaadin.sliderpanel.components;version="1.4.3.mhus1",org.vaadin.
+ sliderpanel.public.sliderpanel;version="1.4.3.mhus1"
 Implementation-Title: SliderPanel
-Implementation-Vendor: Marten Prieß
+Implementation-Vendor: Marten Prie￯﾿ﾽ
 Implementation-Vendor-Id: org.vaadin.addons
-Implementation-Version: 1.4.2
+Implementation-Version: 1.4.3-mhus1
 Import-Package: com.google.gwt.animation.client;resolution:=optional,com
  .google.gwt.core.client;resolution:=optional,com.google.gwt.dom.client;
  resolution:=optional,com.google.gwt.event.shared;resolution:=optional,c
@@ -40,10 +36,10 @@ Import-Package: com.google.gwt.animation.client;resolution:=optional,com
  ptional;version="[7.7,8)",com.vaadin.shared.communication;resolution:=o
  ptional;version="[7.7,8)",com.vaadin.shared.ui;resolution:=optional;ver
  sion="[7.7,8)",com.vaadin.ui;resolution:=optional;version="[7.7,8)"
-Originally-Created-By: Apache Maven Bundle Plugin
+Originally-Created-By: Maven Integration for Eclipse
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
 Tool: Bnd-2.3.0.201405100607
-Vaadin-Addon: vaadin-sliderpanel-1.4.2.jar
+Vaadin-Addon: sliderpanel-1.4.3-mhus1.jar
 Vaadin-License-Title: The MIT License (MIT)
 Vaadin-Package-Version: 1
 Vaadin-Widgetsets: org.vaadin.sliderpanel.WidgetSet
