@@ -80,6 +80,7 @@
     <module>vaadin-shared-deps</module>
     <module>flummi</module>
     <module>groovy</module>
+    <module>mhus-gclib</module>
     <module>vaadin-addons</module>
     </modules>
 
