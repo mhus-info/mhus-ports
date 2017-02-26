@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Archiver-Version: Plexus Archiver
-Bnd-LastModified: 1479386274804
+Bnd-LastModified: 1488104696319
 BNDPrependExtension-Import-Package: !org.apache.karaf.util.tracker.annot
  ation
 Build-Jdk: 1.8.0_66
 Built-By: mikehummel
-Bundle-ClassPath: .,PortalLayout-2.0.mhu1.jar
+Bundle-ClassPath: .,PortalLayout-2.0.mhu2.jar
 Bundle-Description: A set of tools to improve OSGi frameworks and karaf
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
 Bundle-ManifestVersion: 2
@@ -14,8 +14,8 @@ Bundle-SymbolicName: vaadin-portallayout
 Bundle-Version: 1.3.1.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
 Embed-Dependency: PortalLayout
-Embedded-Artifacts: PortalLayout-2.0.mhu1.jar;g="org.vaadin.addons";a="P
- ortalLayout";v="2.0.mhu1"
+Embedded-Artifacts: PortalLayout-2.0.mhu2.jar;g="org.vaadin.addons";a="P
+ ortalLayout";v="2.0.mhu2"
 Export-Package: org.vaadin.addons.portallayout.event;uses:="com.vaadin.u
  i,org.vaadin.addons.portallayout.portlet";version="1.3.1.SNAPSHOT",org.
  vaadin.addons.portallayout.gwt;version="1.3.1.SNAPSHOT",org.vaadin.addo
@@ -30,70 +30,69 @@ Export-Package: org.vaadin.addons.portallayout.event;uses:="com.vaadin.u
  layout.gwt.client.portal.connection;uses:="com.allen_sauer.gwt.dnd.clie
  nt,com.allen_sauer.gwt.dnd.client.drop,com.google.gwt.user.client.ui,co
  m.vaadin.client,com.vaadin.client.communication,com.vaadin.client.ui,co
- m.vaadin.shared,com.vaadin.shared.communication,com.vaadin.shared.ui,or
- g.vaadin.addons.portallayout.gwt.client.portal,org.vaadin.addons.portal
- layout.gwt.client.portal.strategy,org.vaadin.addons.portallayout.gwt.cl
- ient.portlet,org.vaadin.addons.portallayout.gwt.shared.portal,org.vaadi
- n.addons.portallayout.gwt.shared.portal.rpc,org.vaadin.addons.portallay
- out.portal";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout.gwt
- .client.portal.strategy;uses:="org.vaadin.addons.portallayout.gwt.clien
- t.portal.connection";version="1.3.1.SNAPSHOT",org.vaadin.addons.portall
- ayout.gwt.client.portlet;uses:="com.google.gwt.user.client,com.google.g
- wt.user.client.ui,com.vaadin.client,com.vaadin.client.communication,com
- .vaadin.client.extensions,com.vaadin.shared,com.vaadin.shared.communica
+ m.vaadin.client.ui.layout,com.vaadin.shared,com.vaadin.shared.communica
  tion,com.vaadin.shared.ui,org.vaadin.addons.portallayout.gwt.client.por
- tlet.event,org.vaadin.addons.portallayout.gwt.client.portlet.header,org
- .vaadin.addons.portallayout.gwt.shared.portlet,org.vaadin.addons.portal
- layout.portlet";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout
- .gwt.client.portlet.event;uses:="com.google.gwt.event.shared,com.google
- .web.bindery.event.shared,org.vaadin.addons.portallayout.gwt.client.por
- tlet";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout.gwt.clien
- t.portlet.header;uses:="com.google.gwt.event.dom.client,com.google.gwt.
- event.shared,com.google.gwt.user.client.ui,com.vaadin.client,org.vaadin
- .addons.portallayout.gwt.client.portlet,org.vaadin.addons.portallayout.
- gwt.client.portlet.event";version="1.3.1.SNAPSHOT",org.vaadin.addons.po
- rtallayout.gwt.public.PortalLayout;version="1.3.1.SNAPSHOT",org.vaadin.
- addons.portallayout.gwt.shared.container;uses:="com.vaadin.shared,com.v
- aadin.shared.ui";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayou
- t.gwt.shared.portal;uses:="com.vaadin.shared,com.vaadin.shared.ui";vers
- ion="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout.gwt.shared.portal.r
- pc;uses:="com.vaadin.shared,com.vaadin.shared.communication";version="1
- .3.1.SNAPSHOT",org.vaadin.addons.portallayout.gwt.shared.portlet;uses:=
- "com.vaadin.shared";version="1.3.1.SNAPSHOT",org.vaadin.addons.portalla
- yout.gwt.shared.portlet.rpc;uses:="com.vaadin.shared.communication";ver
- sion="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout.portal;uses:="com.
- vaadin.annotations,com.vaadin.shared,com.vaadin.shared.communication,co
- m.vaadin.shared.ui,com.vaadin.ui,org.vaadin.addons.portallayout.event,o
- rg.vaadin.addons.portallayout.gwt.shared.portal,org.vaadin.addons.porta
- llayout.portlet";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayou
- t.portlet;uses:="com.vaadin.server,com.vaadin.shared,com.vaadin.shared.
- communication,com.vaadin.ui,org.vaadin.addons.portallayout.gwt.shared.p
- ortlet";version="1.3.1.SNAPSHOT"
+ tal,org.vaadin.addons.portallayout.gwt.client.portal.strategy,org.vaadi
+ n.addons.portallayout.gwt.client.portlet,org.vaadin.addons.portallayout
+ .gwt.shared.portal,org.vaadin.addons.portallayout.gwt.shared.portal.rpc
+ ,org.vaadin.addons.portallayout.portal";version="1.3.1.SNAPSHOT",org.va
+ adin.addons.portallayout.gwt.client.portal.strategy;uses:="org.vaadin.a
+ ddons.portallayout.gwt.client.portal.connection";version="1.3.1.SNAPSHO
+ T",org.vaadin.addons.portallayout.gwt.client.portlet;uses:="com.google.
+ gwt.user.client,com.google.gwt.user.client.ui,com.vaadin.client,com.vaa
+ din.client.communication,com.vaadin.client.extensions,com.vaadin.shared
+ ,com.vaadin.shared.communication,com.vaadin.shared.ui,org.vaadin.addons
+ .portallayout.gwt.client.portlet.event,org.vaadin.addons.portallayout.g
+ wt.client.portlet.header,org.vaadin.addons.portallayout.gwt.shared.port
+ let,org.vaadin.addons.portallayout.portlet";version="1.3.1.SNAPSHOT",or
+ g.vaadin.addons.portallayout.gwt.client.portlet.event;uses:="com.google
+ .gwt.event.shared,org.vaadin.addons.portallayout.gwt.client.portlet";ve
+ rsion="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout.gwt.client.portle
+ t.header;uses:="com.google.gwt.event.dom.client,com.google.gwt.event.sh
+ ared,com.google.gwt.user.client.ui,com.vaadin.client,org.vaadin.addons.
+ portallayout.gwt.client.portlet,org.vaadin.addons.portallayout.gwt.clie
+ nt.portlet.event";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayo
+ ut.gwt.public.PortalLayout;version="1.3.1.SNAPSHOT",org.vaadin.addons.p
+ ortallayout.gwt.shared.container;uses:="com.vaadin.shared,com.vaadin.sh
+ ared.ui";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout.gwt.sh
+ ared.portal;uses:="com.vaadin.shared,com.vaadin.shared.ui";version="1.3
+ .1.SNAPSHOT",org.vaadin.addons.portallayout.gwt.shared.portal.rpc;uses:
+ ="com.vaadin.shared,com.vaadin.shared.communication";version="1.3.1.SNA
+ PSHOT",org.vaadin.addons.portallayout.gwt.shared.portlet;uses:="com.vaa
+ din.shared";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout.gwt
+ .shared.portlet.rpc;uses:="com.vaadin.shared.communication";version="1.
+ 3.1.SNAPSHOT",org.vaadin.addons.portallayout.portal;uses:="com.vaadin.a
+ nnotations,com.vaadin.shared,com.vaadin.shared.communication,com.vaadin
+ .shared.ui,com.vaadin.ui,org.vaadin.addons.portallayout.event,org.vaadi
+ n.addons.portallayout.gwt.shared.portal,org.vaadin.addons.portallayout.
+ portlet";version="1.3.1.SNAPSHOT",org.vaadin.addons.portallayout.portle
+ t;uses:="com.vaadin.server,com.vaadin.shared,com.vaadin.shared.communic
+ ation,com.vaadin.ui,org.vaadin.addons.portallayout.gwt.shared.portlet";
+ version="1.3.1.SNAPSHOT"
 Implementation-Title: PortalLayout
 Implementation-Vendor: 
-Implementation-Version: 2.0.mhu1
+Implementation-Version: 2.0.mhu2
 Import-Package: com.allen_sauer.gwt.dnd.client;resolution:=optional,com.
  allen_sauer.gwt.dnd.client.drop;resolution:=optional,com.allen_sauer.gw
  t.dnd.client.util;resolution:=optional,com.google.gwt.core.client;resol
  ution:=optional,com.google.gwt.dom.client;resolution:=optional,com.goog
- le.gwt.event.dom.client;resolution:=optional,com.google.gwt.event.logic
- al.shared;resolution:=optional,com.google.gwt.event.shared;resolution:=
- optional,com.google.gwt.user.client;resolution:=optional,com.google.gwt
- .user.client.ui;resolution:=optional,com.google.web.bindery.event.share
- d;resolution:=optional,com.vaadin.annotations;resolution:=optional;vers
- ion="[7.7,8)",com.vaadin.client;resolution:=optional;version="[7.7,8)",
- com.vaadin.client.communication;resolution:=optional;version="[7.7,8)",
- com.vaadin.client.extensions;resolution:=optional;version="[7.7,8)",com
- .vaadin.client.ui;resolution:=optional;version="[7.7,8)",com.vaadin.cli
- ent.ui.layout;resolution:=optional;version="[7.7,8)",com.vaadin.server;
- resolution:=optional;version="[7.7,8)",com.vaadin.shared;resolution:=op
- tional;version="[7.7,8)",com.vaadin.shared.communication;resolution:=op
- tional;version="[7.7,8)",com.vaadin.shared.ui;resolution:=optional;vers
- ion="[7.7,8)",com.vaadin.ui;resolution:=optional;version="[7.7,8)"
+ le.gwt.event.dom.client;resolution:=optional,com.google.gwt.event.share
+ d;resolution:=optional,com.google.gwt.user.client;resolution:=optional,
+ com.google.gwt.user.client.ui;resolution:=optional,com.vaadin.annotatio
+ ns;resolution:=optional;version="[7.7,8)",com.vaadin.client;resolution:
+ =optional;version="[7.7,8)",com.vaadin.client.communication;resolution:
+ =optional;version="[7.7,8)",com.vaadin.client.extensions;resolution:=op
+ tional;version="[7.7,8)",com.vaadin.client.ui;resolution:=optional;vers
+ ion="[7.7,8)",com.vaadin.client.ui.layout;resolution:=optional;version=
+ "[7.7,8)",com.vaadin.server;resolution:=optional;version="[7.7,8)",com.
+ vaadin.shared;resolution:=optional;version="[7.7,8)",com.vaadin.shared.
+ communication;resolution:=optional;version="[7.7,8)",com.vaadin.shared.
+ ui;resolution:=optional;version="[7.7,8)",com.vaadin.ui;resolution:=opt
+ ional;version="[7.7,8)"
 Originally-Created-By: Apache Maven 3.3.3
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
 Tool: Bnd-2.3.0.201405100607
-Vaadin-Addon: PortalLayout-2.0.mhu1.jar
+Vaadin-Addon: PortalLayout-2.0.mhu2.jar
 Vaadin-Package-Version: 1
 Vaadin-Widgetsets: org.vaadin.addons.portallayout.gwt.PortalLayoutWidget
  Set

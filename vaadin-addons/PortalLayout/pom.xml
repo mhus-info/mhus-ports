@@ -17,8 +17,8 @@
 
 	<modules>
 		<module>addon</module>
-		<module>demo</module>
 		<!-- 
+		<module>demo</module>
 		<module>manual</module>
 		 -->
 	</modules>
