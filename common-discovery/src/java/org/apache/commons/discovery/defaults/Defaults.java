@@ -17,7 +17,7 @@ public class Defaults extends MObject {
 
 		try {
 			Class<?> ifc = Class.forName(name);
-			Object obj = MSingleton.baseLookup(this, ifc);
+			Object obj = MSingleton.lookup(ifc);
 			if (obj != null) return obj.getClass();
 		} catch (Throwable e) {
 		}
