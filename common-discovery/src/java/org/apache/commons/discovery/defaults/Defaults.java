@@ -1,7 +1,7 @@
 package org.apache.commons.discovery.defaults;
 
 import de.mhus.lib.core.lang.MObject;
-import de.mhus.lib.core.MSingleton;
+import de.mhus.lib.core.MApi;
 
 public class Defaults extends MObject {
 
@@ -17,7 +17,7 @@ public class Defaults extends MObject {
 
 		try {
 			Class<?> ifc = Class.forName(name);
-			Object obj = MSingleton.lookup(ifc);
+			Object obj = MApi.lookup(ifc);
 			if (obj != null) return obj.getClass();
 		} catch (Throwable e) {
 		}
