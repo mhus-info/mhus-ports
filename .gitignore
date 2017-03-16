@@ -1,1 +1,4 @@
-vaadin-addons/vaadin-sliderpanel/target/
+.classpath
+.project
+.settings/
+target/
