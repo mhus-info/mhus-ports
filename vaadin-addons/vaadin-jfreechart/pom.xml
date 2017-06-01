@@ -39,7 +39,7 @@
 	<dependency>
 	   <groupId>org.vaadin.addon</groupId>
 	   <artifactId>jfreechartwrapper</artifactId>
-	   <version>3.0.3</version>
+	   <version>3.0.3.mhus1</version>
 	</dependency>
 
 	<dependency>

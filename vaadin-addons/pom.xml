@@ -18,6 +18,7 @@
   	<module>PortalLayout</module>
   	<module>vaadin-portallayout</module>
   	<module>vaadin-aceeditor</module>
+  	<module>jfreechartwrapper</module>
   	<module>vaadin-jfreechart</module>
   	<module>flatselect</module>
   	<module>vaadin-flatselect</module>
