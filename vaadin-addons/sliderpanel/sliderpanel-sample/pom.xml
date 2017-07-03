@@ -106,7 +106,7 @@
                             <artifactItems>
                                 <artifactItem>
 									<groupId>org.vaadin.addons</groupId>
-									<artifactId>vaadin-sliderpanel</artifactId>
+									<artifactId>sliderpanel</artifactId>
 									<version>${project.version}</version>
 									<type>jar</type>
                                     <includes>**/sliderpanel/components/*.scss</includes>
