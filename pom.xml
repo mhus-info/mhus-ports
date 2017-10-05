@@ -83,6 +83,7 @@
     <module>groovy</module>
     <module>mhus-gclib</module>
     <module>vaadin-addons</module>
+    <module>bonita-client</module>
     </modules>
 
    <build>
