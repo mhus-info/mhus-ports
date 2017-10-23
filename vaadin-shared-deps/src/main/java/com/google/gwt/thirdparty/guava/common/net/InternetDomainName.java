@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  * {@link #equals(Object)}.
  *
  * <p><a href="http://en.wikipedia.org/wiki/Internationalized_domain_name">
- * Internationalized domain names</a> such as {@code 网络.cn} are supported, as
+ * Internationalized domain names</a> such as {@code ??.cn} are supported, as
  * are the equivalent <a
  * href="http://en.wikipedia.org/wiki/Internationalized_domain_name">IDNA
  * Punycode-encoded</a> versions.

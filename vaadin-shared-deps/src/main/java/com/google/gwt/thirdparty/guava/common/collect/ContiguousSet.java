@@ -159,7 +159,7 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
    * <p>Note that this method will return ranges with unbounded endpoints if {@link BoundType#OPEN}
    * is requested for a domain minimum or maximum.  For example, if {@code set} was created from the
    * range {@code [1..Integer.MAX_VALUE]} then {@code set.range(CLOSED, OPEN)} must return
-   * {@code [1..∞)}.
+   * {@code [1..inf)}.
    *
    * @throws NoSuchElementException if this set is empty
    */

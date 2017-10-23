@@ -280,7 +280,7 @@ public final class Stopwatch {
       case NANOSECONDS:
         return "ns";
       case MICROSECONDS:
-        return "\u03bcs"; // μs
+        return "\u03bcs"; // 'micro's
       case MILLISECONDS:
         return "ms";
       case SECONDS:

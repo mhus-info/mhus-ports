@@ -56,11 +56,11 @@ import javax.annotation.Nullable;
  * <tr><td>{@code [a..b]}  <td>{@code {x | a <= x <= b}}<td>{@link Range#closed closed}
  * <tr><td>{@code (a..b]}  <td>{@code {x | a < x <= b}} <td>{@link Range#openClosed openClosed}
  * <tr><td>{@code [a..b)}  <td>{@code {x | a <= x < b}} <td>{@link Range#closedOpen closedOpen}
- * <tr><td>{@code (a..+∞)} <td>{@code {x | x > a}}      <td>{@link Range#greaterThan greaterThan}
- * <tr><td>{@code [a..+∞)} <td>{@code {x | x >= a}}     <td>{@link Range#atLeast atLeast}
- * <tr><td>{@code (-∞..b)} <td>{@code {x | x < b}}      <td>{@link Range#lessThan lessThan}
- * <tr><td>{@code (-∞..b]} <td>{@code {x | x <= b}}     <td>{@link Range#atMost atMost}
- * <tr><td>{@code (-∞..+∞)}<td>{@code {x}}              <td>{@link Range#all all}
+ * <tr><td>{@code (a..+inf)} <td>{@code {x | x > a}}      <td>{@link Range#greaterThan greaterThan}
+ * <tr><td>{@code [a..+inf)} <td>{@code {x | x >= a}}     <td>{@link Range#atLeast atLeast}
+ * <tr><td>{@code (-inf..b)} <td>{@code {x | x < b}}      <td>{@link Range#lessThan lessThan}
+ * <tr><td>{@code (-inf..b]} <td>{@code {x | x <= b}}     <td>{@link Range#atMost atMost}
+ * <tr><td>{@code (-inf..+inf)}<td>{@code {x}}              <td>{@link Range#all all}
  * </table></blockquote>
  *
  * <p>When both endpoints exist, the upper endpoint may not be less than the lower. The endpoints
@@ -642,9 +642,9 @@ public final class Range<C extends Comparable> implements Predicate<C>, Serializ
    *
    * <ul>
    * <li>[start..end)
-   * <li>[start..+∞)
-   * <li>(-∞..end) (only if type {@code C} is unbounded below)
-   * <li>(-∞..+∞) (only if type {@code C} is unbounded below)
+   * <li>[start..+inf)
+   * <li>(-inf..end) (only if type {@code C} is unbounded below)
+   * <li>(-inf..+inf) (only if type {@code C} is unbounded below)
    * </ul>
    */
   public Range<C> canonical(DiscreteDomain<C> domain) {

@@ -32,16 +32,16 @@ import javax.annotation.Nullable;
  * collections of values:
  *
  * <ul>
- * <li>a → 1, 2
- * <li>b → 3
+ * <li>a-1, 2
+ * <li>b-3
  * </ul>
  *
  * ... or as a single "flattened" collection of key-value pairs:
  *
  * <ul>
- * <li>a → 1
- * <li>a → 2
- * <li>b → 3
+ * <li>a-1
+ * <li>a-2
+ * <li>b-3
  * </ul>
  *
  * <p><b>Important:</b> although the first interpretation resembles how most
