@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>vaadin-aceeditor</artifactId>
+  <artifactId>vaadin-refresher</artifactId>
     <packaging>bundle</packaging>
   <parent>
     <groupId>de.mhus.ports</groupId>
-    <version>1.3.1</version>
+    <version>1.3.1-SNAPSHOT</version>
     <artifactId>vaadin-addons</artifactId>
   </parent>
 
@@ -21,25 +21,28 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                        	org.vaadin.aceeditor.*,
+                        	com.github.wolfie.refresher.*,
                         	META-INF*
                         </Export-Package>
                         <Import-Package>*;resolution:=optional</Import-Package>
-						<Embed-Dependency>aceeditor</Embed-Dependency>
+						<Embed-Dependency>refresher</Embed-Dependency>
                     </instructions>
                 </configuration>
-            </plugin>
+            </plugin>            
 	</plugins>  
 </build>
 
 <dependencies>
 
-   	<!-- https://vaadin.com/directory#!addon/aceeditor -->
-	<dependency>
-	   <groupId>org.vaadin.addons</groupId>
-	   <artifactId>aceeditor</artifactId>
-	   <version>0.8.14</version>
-	</dependency>	    
+   	<!-- https://vaadin.com/directory#!addon/refresher -->
+   	<!-- https://github.com/wolfie/Refresher -->
+   	
+<dependency>
+   <groupId>org.vaadin.addons</groupId>
+   <artifactId>refresher</artifactId>
+   <version>1.2.3.7</version>
+</dependency>
+   	
 </dependencies>
 
 </project>
