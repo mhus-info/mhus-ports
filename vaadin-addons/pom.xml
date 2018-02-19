@@ -4,28 +4,54 @@
     <packaging>pom</packaging>
   <parent>
     <groupId>de.mhus.ports</groupId>
-    <version>1.3.3-SNAPSHOT</version>
+    <version>1.3.2</version>
     <artifactId>mhus-ports</artifactId>
   </parent>
 
-  <modules>
-  	<module>easyuploads</module>
-  	<module>vaadin-easyuploads</module>
-  	<module>vaadin-viritin</module>
-  	<module>vaadin-borderlayout</module>
-  	<module>sliderpanel</module>
-  	<module>vaadin-sliderpanel</module>
-  	<module>PortalLayout</module>
-  	<module>vaadin-portallayout</module>
-  	<module>vaadin-aceeditor</module>
-  	<module>jfreechartwrapper</module>
-  	<module>vaadin-jfreechart</module>
-  	<module>flatselect</module>
-  	<module>vaadin-flatselect</module>
-  	<module>vaadin-contextmenu</module>
-  	<module>vaadin-refresher</module>
-  	<module>vaadin-ckeditor</module>
-  </modules>
+    <profiles>
+    
+      <profile>
+        <id>release</id>
+		  <modules>
+		  	<module>vaadin-easyuploads</module>
+		  	<module>vaadin-viritin</module>
+		  	<module>vaadin-borderlayout</module>
+		  	<module>vaadin-sliderpanel</module>
+		  	<module>vaadin-portallayout</module>
+		  	<module>vaadin-aceeditor</module>
+		  	<module>vaadin-jfreechart</module>
+		  	<module>vaadin-flatselect</module>
+		  	<module>vaadin-contextmenu</module>
+		  	<module>vaadin-refresher</module>
+		  	<module>vaadin-ckeditor</module>
+		  </modules>
+      </profile>
+	  <profile>
+	    <id>default</id>
+	    <activation>
+	      <activeByDefault>true</activeByDefault>
+	    </activation>
+		  <modules>
+		  	<module>easyuploads</module>
+		  	<module>vaadin-easyuploads</module>
+		  	<module>vaadin-viritin</module>
+		  	<module>vaadin-borderlayout</module>
+		  	<module>sliderpanel</module>
+		  	<module>vaadin-sliderpanel</module>
+		  	<module>PortalLayout</module>
+		  	<module>vaadin-portallayout</module>
+		  	<module>vaadin-aceeditor</module>
+		  	<module>jfreechartwrapper</module>
+		  	<module>vaadin-jfreechart</module>
+		  	<module>flatselect</module>
+		  	<module>vaadin-flatselect</module>
+		  	<module>vaadin-contextmenu</module>
+		  	<module>vaadin-refresher</module>
+		  	<module>vaadin-ckeditor</module>
+		  </modules>
+	  </profile>
+   </profiles>
+
   <properties>
       <bndlib.version>1.50.0</bndlib.version>
         <felix.metatype.version>1.0.10</felix.metatype.version>

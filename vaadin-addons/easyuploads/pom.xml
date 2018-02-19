@@ -268,13 +268,6 @@
         </extensions>
     </build>
     
-    <distributionManagement>
-        <repository>
-            <id>v4</id>
-            <url>sftp://v4.tahvonen.fi/home/dev/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <repositories>
         <repository>
             <id>vaadin-addons</id>
