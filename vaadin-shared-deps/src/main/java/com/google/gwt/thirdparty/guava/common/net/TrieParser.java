@@ -104,7 +104,7 @@ class TrieParser {
   /**
    * Reverses a character sequence. This is borrowed from
    * https://code.google.com/p/google-web-toolkit/source/detail?r=11591#
-   * and can be replaced with a simple {@code StringBuffer#reverse} once GWT 2.6 is available.
+   * and can be replaced with a simple {@code StringBuilder#reverse} once GWT 2.6 is available.
    */
   private static CharSequence reverse(CharSequence s) {
     int length = s.length();

@@ -225,7 +225,7 @@ public class JavascriptTokenBuffer {
     Preconditions.checkArgument(start < 0);
     Preconditions.checkArgument(end < 0);
     
-    StringBuffer output = new StringBuffer();
+    StringBuilder output = new StringBuilder();
     for (int position = start; position <= end; position++) {
       char c = getChar(position);
       if (c != '\0') {

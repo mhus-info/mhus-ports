@@ -63,7 +63,7 @@ public class MediaListImpl implements SACMediaList {
 	default:
 	    boolean not_done = true;
 	    int i            = 0;
-	    StringBuffer buf = new StringBuffer(50);
+	    StringBuilder buf = new StringBuilder(50);
 	    do {
 		buf.append(array[i++]);
 		if (i == current) {

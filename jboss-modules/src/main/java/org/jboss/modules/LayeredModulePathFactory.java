@@ -227,7 +227,7 @@ class LayeredModulePathFactory {
 
     static List<String> readRefs(final InputStream is) throws IOException {
         final List<String> refs = new ArrayList<String>();
-        final StringBuffer buffer = new StringBuffer();
+        final StringBuilder buffer = new StringBuilder();
         do {
             if(buffer.length() > 0) {
                 final String ref = buffer.toString().trim();
@@ -239,7 +239,7 @@ class LayeredModulePathFactory {
         return refs;
     }
 
-    static boolean readLine(InputStream is, StringBuffer buffer) throws IOException {
+    static boolean readLine(InputStream is, StringBuilder buffer) throws IOException {
         buffer.setLength(0);
         int c;
         for(;;) {

@@ -33,8 +33,8 @@ import org.w3c.flute.util.Encoding;
  */
 public class Parser implements org.w3c.css.sac.Parser, ParserConstants {
 
-    // replaces all \t, \n, etc with this StringBuffer.
-    static final StringBuffer SPACE = new StringBuffer(" ");
+    // replaces all \t, \n, etc with this StringBuilder.
+    static final StringBuilder SPACE = new StringBuilder(" ");
 
     // the document handler for the parser
     protected DocumentHandler documentHandler;
@@ -371,7 +371,7 @@ public class Parser implements org.w3c.css.sac.Parser, ParserConstants {
                 // construct a clean error message.
                 ParseException pe = (ParseException) e;
                 if (pe.specialConstructor) {
-                    StringBuffer errorM = new StringBuffer();
+                    StringBuilder errorM = new StringBuilder();
                     if (pe.currentToken != null) {
                         errorM.append("encountered \"")
                             .append(pe.currentToken.next);
@@ -1543,7 +1543,7 @@ char connector = ' ';
     } catch (ParseException e) {
      /*
      Token t = getToken(1);
-     StringBuffer s = new StringBuffer();
+     StringBuilder s = new StringBuilder();
      s.append(getToken(0).image);
      while ((t.kind != COMMA) && (t.kind != SEMICOLON) 
 	    && (t.kind != LBRACE) && (t.kind != EOF)) {
@@ -2859,7 +2859,7 @@ Token language;
   }
 
   String skipStatement() throws ParseException {
-    StringBuffer s = new StringBuffer();
+    StringBuilder s = new StringBuilder();
     Token tok = getToken(0);
     if (tok.image != null) {
         s.append(tok.image);
@@ -2901,7 +2901,7 @@ Token language;
   }
 
   String skip_to_matching_brace() throws ParseException {
-    StringBuffer s = new StringBuffer();
+    StringBuilder s = new StringBuilder();
     Token tok;
     int nesting = 1;
     while (true) {
@@ -2924,7 +2924,7 @@ Token language;
   }
 
   String convertStringIndex(String s, int start, int len) throws ParseException {
-    StringBuffer buf = new StringBuffer(len);
+    StringBuilder buf = new StringBuilder(len);
     int index = start;
 
     while (index < len) {
@@ -3000,7 +3000,7 @@ Token language;
 
   String skipAfterExpression() throws ParseException {
     Token t = getToken(1);
-    StringBuffer s = new StringBuffer();
+    StringBuilder s = new StringBuilder();
     s.append(getToken(0).image);
 
     while ((t.kind != RBRACE) && (t.kind != SEMICOLON) && (t.kind != EOF)) {

@@ -228,7 +228,7 @@ public class JSONML {
      * @param b A string buffer in which to build the text.
      * @throws JSONException
      */
-    private static void stringify(JSONArray ja, StringBuffer b)
+    private static void stringify(JSONArray ja, StringBuilder b)
             throws JSONException {
         int          i;
         JSONObject   jo;
@@ -290,7 +290,7 @@ public class JSONML {
      * @throws JSONException
      */
     public static String toString(JSONArray ja) throws JSONException {
-    	StringBuffer b = new StringBuffer();
+    	StringBuilder b = new StringBuilder();
     	stringify(ja, b);
     	return b.toString();
     }

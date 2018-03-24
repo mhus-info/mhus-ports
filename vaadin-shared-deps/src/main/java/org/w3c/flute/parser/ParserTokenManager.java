@@ -3133,7 +3133,7 @@ static final long[] jjtoMore = {
 protected CharStream input_stream;
 private final int[] jjrounds = new int[342];
 private final int[] jjstateSet = new int[684];
-StringBuffer image;
+StringBuilder image;
 int jjimageLen;
 int lengthOfMatch;
 protected char curChar;
@@ -3296,7 +3296,7 @@ void TokenLexicalActions(Token matchedToken)
    {
       case 1 :
         if (image == null)
-            image = new StringBuffer();
+            image = new StringBuilder();
             image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
           image = Parser.SPACE;
          break;
