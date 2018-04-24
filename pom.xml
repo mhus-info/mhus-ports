@@ -74,13 +74,17 @@
       </properties>
 
     <modules>
+    <!-- deprecated
 	    <module>ports-common-discovery</module>
-	    <module>vaadin-shared-deps</module>
+     -->
 	    <module>ports-flummi</module>
 	    <module>ports-groovy</module>
 	    <module>ports-javaxmail</module>
+	<!-- not changed since 1.3.4
 	    <module>ports-gclib</module>
+	    <module>vaadin-shared-deps</module>
 	    <module>vaadin-addons</module>
+	 -->    
     </modules>
 
    <build>
