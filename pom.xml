@@ -74,13 +74,13 @@
       </properties>
 
     <modules>
-	    <module>common-discovery</module>
+	    <module>ports-common-discovery</module>
 	    <module>vaadin-shared-deps</module>
-	    <module>flummi</module>
-	    <module>groovy</module>
-	    <module>mhus-gclib</module>
+	    <module>ports-flummi</module>
+	    <module>ports-groovy</module>
+	    <module>ports-javaxmail</module>
+	    <module>ports-gclib</module>
 	    <module>vaadin-addons</module>
-	    <module>bonita-client</module>
     </modules>
 
    <build>

@@ -18,7 +18,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>commons-discovery</artifactId>
-  <name>commons-discovery</name>
+  <name>ports-commons-discovery</name>
     <packaging>bundle</packaging>
 
   <parent>
@@ -111,13 +111,13 @@
   <properties>
     <commons.componentid>discovery</commons.componentid>
     <commons.release.version>0.5</commons.release.version>
-    <commons.release.desc>(minium JDK 1.5)</commons.release.desc>
+    <commons.release.desc>(minium JDK 1.8)</commons.release.desc>
     <commons.rc.version>RC2</commons.rc.version>
     <commons.binary.suffix />
     <commons.jira.id>DISCOVERY</commons.jira.id>
     <commons.jira.pid>12310472</commons.jira.pid>
-    <maven.compile.source>1.5</maven.compile.source>
-    <maven.compile.target>1.5</maven.compile.target>
+    <maven.compile.source>1.8</maven.compile.source>
+    <maven.compile.target>1.8</maven.compile.target>
   </properties>
 
   <build>
