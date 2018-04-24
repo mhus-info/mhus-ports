@@ -9,17 +9,6 @@
 		<artifactId>mhus-ports</artifactId>
 	</parent>
 
-	<properties>
-		<bndlib.version>1.50.0</bndlib.version>
-		<felix.metatype.version>1.0.10</felix.metatype.version>
-		<compileSource>1.8</compileSource>
-		<osgi.version>5.0.0</osgi.version>
-		<bundle.plugin.version>2.5.3</bundle.plugin.version>
-
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-	</properties>
-
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
