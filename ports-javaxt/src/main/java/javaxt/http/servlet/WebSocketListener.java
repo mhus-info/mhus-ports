@@ -4,6 +4,8 @@ import javaxt.websocket.Frame.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.*;
+
+import de.mhus.lib.core.MLog;
 import javaxt.http.Server;
 
 //******************************************************************************
@@ -40,7 +42,7 @@ import javaxt.http.Server;
  *
  ******************************************************************************/
 
-public class WebSocketListener  {
+public class WebSocketListener extends MLog {
     
     private Server.SocketConnection connection;
     private HttpServletRequest request;
@@ -78,7 +80,7 @@ public class WebSocketListener  {
         roleIsServer = true;
         byteBufferList = new ArrayList<ByteBuffer>();
 
-        log("New WebSocketListener");
+        log().d("New WebSocketListener");
       
       //Upgrade the request
         try{
@@ -110,7 +112,7 @@ public class WebSocketListener  {
             return;
         }
         
-        log("Upgraded Request!");
+        log().t("Upgraded Request!");
         
         
       //Update readystate and notify listener
@@ -161,7 +163,7 @@ public class WebSocketListener  {
           //HttpServletRequest class.
             connection.addListener(new Server.SocketConnection.Listener(){
                 public void onReadable(){
-                    log("onReadable!");
+                	log().t("onReadable!");
                     addEvent("READ");
                 }
             });
@@ -239,7 +241,7 @@ public class WebSocketListener  {
                           //Decode frames
                             List<Frame> frames = decodeFrames(buf);
                             for (Frame frame : frames) {
-                                log("read frame: " + frame);
+                            	log().t("read frame", frame);
                                 processFrame(frame);
                             }
                         }
@@ -254,7 +256,7 @@ public class WebSocketListener  {
                             onDisconnect(CloseFrame.ABNORMAL_CLOSE, "", false);
                         }
                         try{
-                            log("Closing connection!");
+                        	log().t("Closing connection!");
                             connection.close();
                         }
                         catch(IOException ex){}
@@ -263,7 +265,7 @@ public class WebSocketListener  {
                 }
                 else{
                     try{
-                        log("Closing connection!");
+                    	log().t("Closing connection!");
                         connection.close();
                     }
                     catch(Exception e){}
@@ -341,7 +343,7 @@ public class WebSocketListener  {
         int length = buf.capacity();
         buf.flip();
 
-        log("send frame: " + frame);
+        log().t("send frame",frame);
         write(buf, length);
     }
     
@@ -380,7 +382,7 @@ public class WebSocketListener  {
     private void close(int code, String message, boolean remote) {
         if (readystate == READYSTATE.CLOSED) return;
         
-        log("Close!");
+        log().t("Close!");
         if (readystate == READYSTATE.OPEN) {
             readystate = READYSTATE.CLOSING;
 
@@ -718,9 +720,4 @@ public class WebSocketListener  {
         }
     }
     
-    
-    private void log(String str) {
-        Server.log(str);
-    }
-
 }

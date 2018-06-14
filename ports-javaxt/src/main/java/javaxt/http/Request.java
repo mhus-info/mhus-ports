@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import javax.net.ssl.*;
 
+import de.mhus.lib.core.MLog;
+
 //******************************************************************************
 //**  Http Request
 //******************************************************************************
@@ -30,7 +32,7 @@ import javax.net.ssl.*;
  *
  ******************************************************************************/
 
-public class Request {
+public class Request extends MLog {
 
     private URLConnection conn = null;
     private Proxy HttpProxy;
@@ -1039,9 +1041,7 @@ public class Request {
 
         try {
            InetAddress address = InetAddress.getByName(proxyHost);
-           System.out.println("Name: " + address.getHostName());
-           System.out.println("Addr: " + address.getHostAddress());
-           System.out.println("Reach: " + address.isReachable(3000));
+           log().d("Name: ", address.getHostName(),"Addr: ", address.getHostAddress(),"Reach: ", address.isReachable(3000));
            return true;
         }
         catch (UnknownHostException e) {}

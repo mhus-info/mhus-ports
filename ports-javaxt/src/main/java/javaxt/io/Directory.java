@@ -1,6 +1,8 @@
 package javaxt.io;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+
+import de.mhus.lib.core.MLog;
 //******************************************************************************
 //**  Directory Class - By Peter Borissow
 //******************************************************************************
@@ -2765,7 +2767,7 @@ class DirectorySearch implements Runnable {
  *
  ******************************************************************************/
 
-class FileSystemWatcher implements Runnable {
+class FileSystemWatcher extends MLog implements Runnable {
     
     private Directory directory;
     private Timer timer;
@@ -2823,7 +2825,7 @@ class FileSystemWatcher implements Runnable {
             }
             finally {
                 if (this.osHandle != null) {
-                    System.out.println("Shutting down...");
+                    log().d("Shutting down...");
                     try {
                       FileSystemWatcherNative.FindCloseChangeNotification(this.osHandle.longValue());
                     }

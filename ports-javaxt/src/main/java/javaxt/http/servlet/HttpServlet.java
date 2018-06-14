@@ -10,6 +10,8 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import de.mhus.lib.core.MLog;
+
 //******************************************************************************
 //**  HttpServlet Class
 //******************************************************************************
@@ -19,7 +21,7 @@ import javax.servlet.ServletResponse;
  *
  ******************************************************************************/
 
-public abstract class HttpServlet implements Servlet {
+public abstract class HttpServlet extends MLog implements Servlet {
 
     private Authenticator authenticator;
     private javax.net.ssl.KeyManager[] kms;
@@ -63,11 +65,6 @@ public abstract class HttpServlet implements Servlet {
     }
 
     public void destroy(){};
-
-
-    public void log(String str){
-        //TODO: Implement logger
-    }
     
   //**************************************************************************
   //** setPaths

@@ -11,6 +11,8 @@ import javax.sql.ConnectionEventListener;
 import javax.sql.ConnectionPoolDataSource;
 import javax.sql.PooledConnection;
 
+import de.mhus.lib.core.MLog;
+
 //******************************************************************************
 //**  ConnectionPool
 //******************************************************************************
@@ -19,7 +21,7 @@ import javax.sql.PooledConnection;
  *
  ******************************************************************************/
 
-public class ConnectionPool {
+public class ConnectionPool extends MLog {
 
 // This class is a modified version of the MiniConnectionPoolManager (version 2012-01-24)
 // Copyright 2007-2012 Christian d'Heureuse, Inventec Informatik AG, Zurich, Switzerland
@@ -316,7 +318,7 @@ public class ConnectionPool {
        try {
           pconn.close(); }
         catch (SQLException e) {
-          log("Error while closing database connection: "+e.toString()); }
+        	log().e("Error while closing database connection",e); }
     }
 
     private void log (String msg) {

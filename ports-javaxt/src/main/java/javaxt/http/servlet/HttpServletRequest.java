@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpUpgradeHandler;
 import javax.servlet.http.Part;
 
+import de.mhus.lib.core.MLog;
 import javaxt.http.Server;
 
 //******************************************************************************
@@ -31,7 +32,7 @@ import javaxt.http.Server;
  *
  ******************************************************************************/
 
-public class HttpServletRequest implements javax.servlet.http.HttpServletRequest {
+public class HttpServletRequest extends MLog implements javax.servlet.http.HttpServletRequest {
 
     private String[] header; 
     private java.net.URL url;
@@ -1933,17 +1934,17 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
 
 
             String sslVersion = buf.get() + "." + buf.get(); //0x0301 => 3.1 - SSLv3/TLSv1
-            log("sslVersion: " + sslVersion);
+            log().t("sslVersion", sslVersion);
 
 
             int recordLength = Integer.parseInt(getHex(buf) + getHex(buf), 16);
-            log("recordLength: " + recordLength);
+            log().t("recordLength", recordLength);
 
-            log("\r\n" + contentType + " (" + ct + ")" );
+            log().t(contentType, ct);
 
 
             if (startEncryption || contentType.equals("application_data")){
-                log(" *** Encrypted Message **** ");
+            	log().t(" *** Encrypted Message **** ");
                 for (int i=0; i<recordLength; i++){
                     buf.get();
                 }
@@ -1991,7 +1992,7 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
 
                     }
 
-                    log(" - " + handshakeType + " (" + handshake + "):  " + length + " bytes");
+                    log().d(handshakeType, handshake, length);
                 }
 
             }
@@ -2170,10 +2171,7 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
       //
         while (!isEngineClosed(sslEngine)) {
 
-            log("\r\n\r\n");
-            log("===============================================");
-            log("== Handshake " + (x+1));
-            log("===============================================");
+        	log().t("== Handshake ",x);
 
 
           //Read new bytes from the socket
@@ -2188,14 +2186,11 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
             printTLS(inNetData);
 
 
-            log("\r\n------------------------------------------");
-
-
           //Try to unwrap the client message
             HandshakeStatus status = HandshakeStatus.NEED_UNWRAP;
             while (status==HandshakeStatus.NEED_UNWRAP){
                 serverResult = sslEngine.unwrap(inNetData, inAppData);
-                log("server unwrap: ", serverResult);
+                log().t("server unwrap", serverResult);
                 status = runDelegatedTasks(serverResult, sslEngine);
 
               //Fetch more data from the client as needed
@@ -2207,19 +2202,11 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
             }
 
             
-            log("-----");
-
             while (status==HandshakeStatus.NEED_WRAP){
                 serverResult = sslEngine.wrap(outAppData, outNetData);
-                log("\r\nserver wrap: ", serverResult);
+                log().t("\r\nserver wrap: ", serverResult);
                 status = runDelegatedTasks(serverResult, sslEngine);
             }
-
-            
-            log("------------------------------------------");
-
-
-
 
             int len = outNetData.position();
             if (len>0){
@@ -2241,7 +2228,7 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
 
             }
             else{
-                log("Nothing to Send?");
+            	log().t("Nothing to Send?");
                 throw new ServletException();
             }
 
@@ -2272,7 +2259,7 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
             
             Runnable runnable;
             while ((runnable = engine.getDelegatedTask()) != null) {
-                log("\trunning delegated task...");
+            	log().t("\trunning delegated task...");
                 runnable.run();
             }
 
@@ -2281,7 +2268,7 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
                 throw new IOException(
                     "handshake shouldn't need additional tasks");
             }
-            log("\tnew HandshakeStatus: " + hsStatus);
+            log().t("\tnew HandshakeStatus", hsStatus);
 
         }
 
@@ -2308,7 +2295,7 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
         HandshakeStatus status = HandshakeStatus.NEED_WRAP;
         while (status==HandshakeStatus.NEED_WRAP){
             serverResult = sslEngine.wrap(buf, outNetData);
-            log("\r\nserver wrap: ", serverResult);
+            log().t("server wrap", serverResult);
             status = runDelegatedTasks(serverResult, sslEngine);
         }
         
@@ -2324,24 +2311,19 @@ public class HttpServletRequest implements javax.servlet.http.HttpServletRequest
         return buf;
     }
 
-
-    private void log(String str) {
-        Server.log(str);
-    }
-
-    private void log(String str, SSLEngineResult result) {
-
-        HandshakeStatus hsStatus = result.getHandshakeStatus();
-        log(str +
-            result.getStatus() + "/" + hsStatus + ", " +
-            result.bytesConsumed() + "/" + result.bytesProduced() +
-            " bytes");
-
-        //if (result.bytesProduced()>0) buf =
-        if (hsStatus == HandshakeStatus.FINISHED) {
-            log("\t...ready for application data");
-        }
-    }
+//    private void log(String str, SSLEngineResult result) {
+//
+//        HandshakeStatus hsStatus = result.getHandshakeStatus();
+//        log(str +
+//            result.getStatus() + "/" + hsStatus + ", " +
+//            result.bytesConsumed() + "/" + result.bytesProduced() +
+//            " bytes");
+//
+//        //if (result.bytesProduced()>0) buf =
+//        if (hsStatus == HandshakeStatus.FINISHED) {
+//            log("\t...ready for application data");
+//        }
+//    }
 
 
 	@Override

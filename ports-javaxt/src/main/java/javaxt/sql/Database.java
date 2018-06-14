@@ -1,8 +1,11 @@
 package javaxt.sql;
-import java.sql.ResultSet;
 import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import javax.sql.ConnectionPoolDataSource;
+
+import de.mhus.lib.core.logging.Log;
 
 //******************************************************************************
 //**  Database
@@ -15,6 +18,7 @@ import javax.sql.ConnectionPoolDataSource;
 
 public class Database implements Cloneable {
     
+	private static final Log log = Log.getLog(Database.class);
     private String name; //name of the catalog used to store tables, views, etc.
     private String host;
     private Integer port = -1;
@@ -680,24 +684,24 @@ public class Database implements Cloneable {
         try{
             if (conn!=null){
                 dm = conn.getConnection().getMetaData();
-                System.out.println("Driver Information");
-                System.out.println("\tDriver Name: "+ dm.getDriverName());
-                System.out.println("\tDriver Version: "+ dm.getDriverVersion ());
-                System.out.println("\nDatabase Information ");
-                System.out.println("\tDatabase Name: "+ dm.getDatabaseProductName());
-                System.out.println("\tDatabase Version: "+ dm.getDatabaseProductVersion());
-                System.out.println("Avalilable Catalogs ");
+                log.d("Driver Information");
+                log.d("\tDriver Name: "+ dm.getDriverName());
+                log.d("\tDriver Version: "+ dm.getDriverVersion ());
+                log.d("\nDatabase Information ");
+                log.d("\tDatabase Name: "+ dm.getDatabaseProductName());
+                log.d("\tDatabase Version: "+ dm.getDatabaseProductVersion());
+                log.d("Avalilable Catalogs ");
 
                 rs = dm.getCatalogs();
                 while(rs.next()){
-                     System.out.println("\tcatalog: "+ rs.getString(1));
+                	log.d("\tcatalog: "+ rs.getString(1));
                 }
                 rs.close();
                 rs = null;
 
             }
             else
-               System.out.println("Error: No active Connection");
+            	log.d("Error: No active Connection");
         }catch(Exception e){
            e.printStackTrace();
         }

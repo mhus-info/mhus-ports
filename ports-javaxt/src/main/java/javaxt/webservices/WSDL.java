@@ -1,6 +1,9 @@
 package javaxt.webservices;
+import javaxt.utils.Base64;
 import javaxt.utils.string;
 import org.w3c.dom.*;
+
+import de.mhus.lib.core.logging.MLogUtil;
 import javaxt.xml.DOM;
 
 /******************************************************************************
@@ -1283,7 +1286,7 @@ public class WSDL {
 
         }
         else{
-            System.out.println("Unsupported element type: " + nodeName);
+        	MLogUtil.log().e("Unsupported element type",nodeName);
         }
     }
 
@@ -1367,7 +1370,7 @@ public class WSDL {
 
                                     if (DOM.getAttributeValue(childNode, "base").equals(base)){
 
-                                        System.out.println("\t" + typeName);
+                                    	MLogUtil.log().d(WSDL.class,typeName);
                                         elements.add(new Element(node));
 
                                     }

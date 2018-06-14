@@ -17,6 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import de.mhus.lib.core.MLog;
 import de.mhus.lib.core.MThread;
 
 //******************************************************************************
@@ -32,7 +33,7 @@ import de.mhus.lib.core.MThread;
  *
  ******************************************************************************/
 
-public class Server {
+public class Server extends MLog {
     
     private int numThreads;
     private InetSocketAddress[] addresses;
@@ -42,7 +43,6 @@ public class Server {
     /** Maximum time that socket connections can remain idle. */
     private int maxIdleTime = 2*60000; //2 minutes
 
-    public static boolean debug = false;
     private boolean running = true;
    
     private List<SocketConnection> requestProcessorConnections = new LinkedList<SocketConnection>();
@@ -65,9 +65,10 @@ public class Server {
         }
     }
     
-    public void stop() {
+    @SuppressWarnings("deprecation")
+	public void stop() {
     	running = false;
-    	System.out.println("Close JavaXt Server");
+    	log().i("Close JavaXT Server");
     	synchronized (socketMonitorConnections) {
     		socketMonitorConnections.notifyAll();
 	    	for (SocketConnection con : socketMonitorConnections)
@@ -93,7 +94,7 @@ public class Server {
     	MThread.sleep(500);
     	for (SocketListener socket : sockets) {
     		String url = "http://" + socket.address.getHostName() + ":" + socket.address.getPort();
-    		System.out.println("Send exit connect to " + url);
+    		log().i("Send exit connect to " + url);
     		try {
     			HttpURLConnection huc = (HttpURLConnection)(new URL(url)).openConnection();
     			HttpURLConnection.setFollowRedirects(false);
@@ -326,9 +327,7 @@ public class Server {
                 
             }
             catch (java.io.IOException e) {
-                log("Failed to create listener for " + hostName);
-                log("...because of an " + e.getClass());
-                log(e.toString());
+            	log().d("Failed to create listener for",hostName,e);
                 //e.printStackTrace();
                 return;
             }
@@ -409,7 +408,7 @@ public class Server {
                     
                 }
                 catch (Throwable e) {
-                    log(e);
+                	log().w(e);
 
                     
                   //Close the connection
@@ -429,7 +428,7 @@ public class Server {
                     catch(Exception ex){}
                 }
             }
-            System.out.println("Close " + hostName + "\r\n");
+            log().i("Close " + hostName + "\r\n");
             try {
             	if (server != null)
             		server.close();
@@ -484,7 +483,7 @@ public class Server {
                     }
                 }
                 catch (ServletException e){
-                    log(e.getMessage());
+                	log().w(e);
                     if (request!=null){
                         response = new HttpServletResponse(request, connection);
                         response.setStatus(e.getStatusCode(), e.getMessage());
@@ -495,15 +494,11 @@ public class Server {
                     }
                 }
                 catch (java.lang.OutOfMemoryError e){
-                    System.out.println("OutOfMemoryError!!!");
+                    log().e(e.toString());
                     return;
                 }
                 catch (Throwable e) {
-                    if (debug){
-                        if (e.getMessage()==null) e.printStackTrace();
-                        else log(e.getMessage());
-                        e.printStackTrace();
-                    }
+                	log().d(e);
                 }
 
 
@@ -886,7 +881,7 @@ public class Server {
   /** Simple implementation of an JavaXT HttpServlet. Simply returns the
    *  request headers and body back to the client in plain text.
    */
-    private static class ServletTest extends javaxt.http.servlet.HttpServlet {
+    private class ServletTest extends javaxt.http.servlet.HttpServlet {
 
         private final java.io.File dir;
         private final String s = System.getProperty("file.separator");
@@ -908,11 +903,7 @@ public class Server {
     		HttpServletResponse response = (HttpServletResponse) res;
             
           //Print the requested URL
-            log();
-            log("New Request From: " + request.getRemoteAddr());
-            log("TimeStamp: " + new java.util.Date());
-            log(request.getMethod() + ": " + request.getURL().toString());
-            log();
+    		log().d("New Request From", request.getRemoteAddr(), request.getMethod(), ": ", request.getURL());
 
 
             
@@ -989,8 +980,8 @@ public class Server {
             }
 
             
-            log(request.toString());
-            log(response.toString());
+            log().t(request);
+            log().t(response);
         }
         
         
@@ -1008,57 +999,51 @@ public class Server {
             return "application/octet-stream";
         }
         
-        public void log(){
-            log("");
-        }
-        public void log(String msg){
-            Server.log(msg);
-        }
     }
 
     
   //**************************************************************************
   //** log
   //**************************************************************************
-  /** Used to log messages to the standard output stream when the server is
-   *  in debug mode.
-   */
-    public static void log(Object obj) {
-        if (!debug) return;
-        
-        String md = "[" + getTime() + "] ";
-        String padding = "";
-        for (int i=0; i<md.length(); i++){
-            padding+= " ";
-        }
-        String str;
-        if (obj instanceof String){
-            str = (String) obj;
-            if (str.length()>0){
-                String[] arr = str.split("\n");
-                for (int i=0; i<arr.length; i++){
-                    if (i==0) str = md + arr[i].trim() + "\r\n";
-                    else str += padding + arr[i].trim() + "\r\n";
-                }
-                str = str.trim();
-            }
-        }
-        else {
-            str = md + obj;
-        }
-        synchronized(System.out) { System.out.println(str); }
-    }
+//  /** Used to log messages to the standard output stream when the server is
+//   *  in debug mode.
+//   */
+//    public static void log(Object obj) {
+//        if (!debug) return;
+//        
+//        String md = "[" + getTime() + "] ";
+//        String padding = "";
+//        for (int i=0; i<md.length(); i++){
+//            padding+= " ";
+//        }
+//        String str;
+//        if (obj instanceof String){
+//            str = (String) obj;
+//            if (str.length()>0){
+//                String[] arr = str.split("\n");
+//                for (int i=0; i<arr.length; i++){
+//                    if (i==0) str = md + arr[i].trim() + "\r\n";
+//                    else str += padding + arr[i].trim() + "\r\n";
+//                }
+//                str = str.trim();
+//            }
+//        }
+//        else {
+//            str = md + obj;
+//        }
+//        synchronized(System.out) { System.out.println(str); }
+//    }
+//    
     
+//    private static String getTime(){
+//        java.util.Date d = new java.util.Date();
+//        return pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+//    }
     
-    private static String getTime(){
-        java.util.Date d = new java.util.Date();
-        return pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
-    }
-    
-    private static String pad(int i){
-        if (i<10) return "0"+i;
-        else return i+"";
-    }
+//    private static String pad(int i){
+//        if (i<10) return "0"+i;
+//        else return i+"";
+//    }
 
 	public boolean isAllowKeepAlive() {
 		return allowKeepAlive;
