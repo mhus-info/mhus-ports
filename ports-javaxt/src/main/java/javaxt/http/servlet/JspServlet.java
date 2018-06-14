@@ -153,7 +153,7 @@ public class JspServlet extends HttpServlet {
                             if (name.equals("import")) imports.add(value);
                             else if (name.equalsIgnoreCase("pageEncoding")) pageEncoding = value; 
                             else{ 
-                                System.out.println(name + ": " + value);
+                                log().d(name + ": " + value);
                             }
                         }
                     }
