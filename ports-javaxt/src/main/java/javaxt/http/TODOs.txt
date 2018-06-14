@@ -1,0 +1,81 @@
+Bugs:
+
+1. Unable to connect to SSL site after clearing browser cache in Chrome.
+   Steps to reproduce:
+   a. Start web server with SSL
+   b. Connect to server using Chrome
+   c. Clear the browser cache
+   d. Connect to server
+   * Note that this behaviour was observed on Windows using Java 8
+   
+
+
+    SSL session resumption
+    Renegotiaion of handshake on an already existing session.
+    Multi-buffer scatter-gather wrap and unwrap operations.
+    Client certificate authentication requested (not the same as required, which is supported)
+
+   
+   
+Outstanding Tasks:
+
+1. The buffer size in the HttpServletRequest.wrap() method is hard coded to 
+   33049 bytes. This might not be enough. Need to test with a large dataset.
+   We may need to incrementally increase the buffersize if we hit a buffer
+   overflow.
+
+2. Need to set up a timer task to periodically clean up HttpSessions.
+
+3. Confirm implementation/scope of cookies:
+   http://en.wikipedia.org/wiki/HTTP_cookie
+
+4. Check all public implementations of the java.io.InputStream. If a read()
+   returns a -1 all subsequent read() requests should return -1.
+
+5. Need to implement the following methods in HttpServletRequest:
+   - getCharacterEncoding() <--test it!!
+   - getRequestURL() <-- test it!!!
+   - getRequestDispatcher()
+   - isUserInRole()
+
+6. Need to implement the following methods in HttpServletResponse:
+   - addHeader()
+   - setLocale() - Simply sets the class variable which isn't used for anything.
+   - encodeURL() - Implement session management via URLs
+
+7. Rename HttpServlet.processRequest() to service()?
+   
+
+Enhancements:
+
+1. Implement handler for TE Header
+   http://lists.w3.org/Archives/Public/ietf-http-wg/2002JulSep/0019.html
+
+2. Implement mechanism to block DoS attacks
+
+
+Make the process of importing an SSL certificate easier. For example,
+let the users simply point to a directory with the site certificate, root,
+and all the intermediate certificates. 
+
+All we need to do is (a) concat all the certs into one file (in the following order)
+
+(1) Primary SSL Certificate
+(2) Intermediate Certificate 1
+(3) Intermediate Certificate 2
+(4) Root Certificate
+
+
+(b) Create a pkcs12 file from the bundle (we also need the password from the csr).
+(c) import the pkcs12 file into a keystore
+(d) set alias
+
+Here's the manual process:
+
+openssl pkcs12 -export -inkey anmpt.key -in bundle.txt -out bundle.pkcs12
+keytool -importkeystore -srckeystore bundle.pkcs12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststorepass ANMPT12$ -destkeypass ANMPT12$
+keytool -changealias -keystore keystore.jks -alias 1 -destalias anmpt.com
+
+
+Here's how to create pkcs12 file:
+https://stackoverflow.com/a/37568218/
