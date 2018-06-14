@@ -1,11 +1,11 @@
 package javaxt.http.servlet;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.nio.ByteBuffer;
-import javaxt.http.Server.SocketConnection;
+
 import javax.net.ssl.SSLEngine;
 import javax.net.ssl.SSLEngineResult;
 import javax.net.ssl.SSLEngineResult.HandshakeStatus;
@@ -16,10 +16,11 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpUpgradeHandler;
+import javax.servlet.http.HttpUtils;
 import javax.servlet.http.Part;
 
 import de.mhus.lib.core.MLog;
-import javaxt.http.Server;
+import javaxt.http.Server.SocketConnection;
 
 //******************************************************************************
 //**  HttpServletRequest

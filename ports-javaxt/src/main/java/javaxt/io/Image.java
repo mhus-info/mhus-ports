@@ -1,24 +1,45 @@
 package javaxt.io;
-import java.io.*;
-import javax.imageio.*;
-import javax.imageio.metadata.*;
-
-import java.awt.image.*;
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
 import java.awt.color.ColorSpace;
 import java.awt.geom.AffineTransform;
-import java.awt.*;
-
-import java.util.HashSet;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageOp;
+import java.awt.image.ColorConvertOp;
+import java.awt.image.ColorModel;
+import java.awt.image.ConvolveOp;
+import java.awt.image.Kernel;
+import java.awt.image.RenderedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.NamedNodeMap;
-
+import javax.imageio.IIOImage;
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReadParam;
+import javax.imageio.ImageReader;
+import javax.imageio.ImageWriteParam;
+import javax.imageio.ImageWriter;
+import javax.imageio.metadata.IIOMetadata;
+import javax.imageio.metadata.IIOMetadataNode;
 //Imports for JPEG
 //import com.sun.image.codec.jpeg.*; //<-- Not always available in newer versions
 import javax.imageio.plugins.jpeg.JPEGImageWriteParam;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 //Imports for JP2
 //import javax.media.jai.RenderedOp;

@@ -1,10 +1,10 @@
 package javaxt.http.servlet;
-import javaxt.http.servlet.HttpServletResponse.ConnectionOutputStream;
 import java.io.IOException;
 
 import javax.servlet.WriteListener;
 
 import de.mhus.lib.errors.NotSupportedException;
+import javaxt.http.servlet.HttpServletResponse.ConnectionOutputStream;
 
 //******************************************************************************
 //**  ServletOutputStream

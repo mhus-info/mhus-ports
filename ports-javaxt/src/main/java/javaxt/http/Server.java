@@ -1,17 +1,14 @@
 package javaxt.http;
-import javaxt.http.servlet.*;
-import java.util.List;
-import java.util.LinkedList;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
 import java.net.URL;
-import java.net.URLConnection;
-import java.nio.channels.Selector;
 import java.nio.channels.SelectionKey;
-import java.nio.channels.SocketChannel;
+import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import javax.servlet.ServletRequest;
@@ -19,6 +16,11 @@ import javax.servlet.ServletResponse;
 
 import de.mhus.lib.core.MLog;
 import de.mhus.lib.core.MThread;
+import javaxt.http.servlet.HttpServlet;
+import javaxt.http.servlet.HttpServletRequest;
+import javaxt.http.servlet.HttpServletResponse;
+import javaxt.http.servlet.ServletException;
+import javaxt.http.servlet.WebSocketListener;
 
 //******************************************************************************
 //**  JavaXT Http Server

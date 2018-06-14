@@ -1,14 +1,15 @@
 package javaxt.http.servlet;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.util.zip.GZIPOutputStream;
-import javaxt.http.Server.SocketConnection;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.TimeZone;
+import java.util.zip.GZIPOutputStream;
+
+import javaxt.http.Server.SocketConnection;
 
 //******************************************************************************
 //**  HttpServletResponse Class

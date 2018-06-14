@@ -1,13 +1,15 @@
 package javaxt.io;
 
-import java.io.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;
-import java.io.FileOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
-
+import java.io.FileOutputStream;
 //Imports for dealing with ZIP files
 import java.net.URI;
-import java.util.zip.*;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
 
 //******************************************************************************
 //**  Jar Class - By Peter Borissow

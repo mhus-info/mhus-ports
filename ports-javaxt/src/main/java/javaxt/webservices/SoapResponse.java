@@ -1,5 +1,7 @@
 package javaxt.webservices;
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+
 import javaxt.xml.DOM;
 
 //******************************************************************************

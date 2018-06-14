@@ -1,8 +1,10 @@
 package javaxt.http;
-import java.net.URLConnection;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
-import java.io.*;
 
 //******************************************************************************
 //**  Http Response

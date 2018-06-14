@@ -1,19 +1,17 @@
 package javaxt.http.servlet;
-import javax.tools.JavaCompiler;
-import javax.tools.JavaFileObject;
-import javax.tools.SimpleJavaFileObject;
-import javax.tools.ToolProvider;
-import javax.tools.JavaFileManager;
-import javax.tools.JavaFileObject.Kind;
-import javax.tools.ForwardingJavaFileManager;
-import javax.tools.StandardJavaFileManager;
-
 import java.io.IOException;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.tools.FileObject;
+import javax.tools.ForwardingJavaFileManager;
+import javax.tools.JavaCompiler;
+import javax.tools.JavaFileManager;
+import javax.tools.JavaFileObject;
+import javax.tools.JavaFileObject.Kind;
+import javax.tools.SimpleJavaFileObject;
+import javax.tools.StandardJavaFileManager;
+import javax.tools.ToolProvider;
 
 //******************************************************************************
 //**  JSP Servlet

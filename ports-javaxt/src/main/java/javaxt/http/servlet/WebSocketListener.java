@@ -1,12 +1,18 @@
 package javaxt.http.servlet;
-import javaxt.websocket.*;
-import javaxt.websocket.Frame.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 import de.mhus.lib.core.MLog;
 import javaxt.http.Server;
+import javaxt.websocket.Frame;
+import javaxt.websocket.Frame.CloseFrame;
+import javaxt.websocket.FrameException;
+import javaxt.websocket.IncompleteFrameException;
+import javaxt.websocket.UTF8;
 
 //******************************************************************************
 //**  WebSocketListener

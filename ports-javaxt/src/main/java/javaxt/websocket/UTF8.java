@@ -1,7 +1,11 @@
 package javaxt.websocket;
-import javaxt.websocket.Frame.CloseFrame;
 import java.nio.ByteBuffer;
-import java.nio.charset.*;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CodingErrorAction;
+
+import javaxt.websocket.Frame.CloseFrame;
 
 //******************************************************************************
 //**  UTF8

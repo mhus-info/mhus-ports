@@ -1,7 +1,7 @@
 package javaxt.websocket;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Random;
-import java.math.BigInteger;
 
 //******************************************************************************
 //**  Frame

@@ -1,7 +1,9 @@
 package javaxt.webservices;
-import org.w3c.dom.*;
-import javaxt.xml.DOM;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+
 import javaxt.utils.Value;
+import javaxt.xml.DOM;
 
 //******************************************************************************
 //**  Parameter Class
