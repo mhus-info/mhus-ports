@@ -84,8 +84,8 @@ public class UTF8 {
 	// **************************************************************************
 	/**
 	 * Returns true if the ByteBuffer contains a valid UTF-8 encoded string.
-	 * Based on the "Flexible and Economical UTF-8 Decoder" algorithm by Björn
-	 * Höhrmann (http://bjoern.hoehrmann.de/utf-8/decoder/dfa/)
+	 * Based on the "Flexible and Economical UTF-8 Decoder" algorithm by Bjoern
+	 * Hoehrmann (http://bjoern.hoehrmann.de/utf-8/decoder/dfa/)
 	 *
 	 * @param data
 	 *            ByteBuffer
