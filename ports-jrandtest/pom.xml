@@ -50,7 +50,7 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							com.fasteasytrade.jrandtest.*;version=${javaxt.version}
+							com.fasteasytrade.jrandtest.*;version=${project.version}
 						</Export-Package>
 						<Import-Package>*</Import-Package>
 						<DynamicImport-Package>*</DynamicImport-Package>
