@@ -1,6 +1,4 @@
-package com.fasteasytrade.jrandtest.crypta;
-
-import com.fasteasytrade.jrandtest.io.RandomStream;
+package com.fasteasytrade.jrandtest.io;
 
 import de.mhus.lib.core.MApi;
 import de.mhus.lib.core.crypt.MRandom;
