@@ -50,9 +50,9 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							javaxt.*;version=${javaxt.version}
+							com.fasteasytrade.jrandtest.*;version=${javaxt.version}
 						</Export-Package>
-						<Import-Package>*;resolution:=optional</Import-Package>
+						<Import-Package>*</Import-Package>
 						<DynamicImport-Package>*</DynamicImport-Package>
 						<!-- 
 						<Embed-Dependency>javaxt-core,javaxt-server</Embed-Dependency>
