@@ -1,18 +1,18 @@
 package org.vaadin.easyuploads;
 
-import com.vaadin.data.Buffered;
-import com.vaadin.data.Property;
-import com.vaadin.data.Validatable;
-import com.vaadin.data.Validator;
-import com.vaadin.data.Validator.InvalidValueException;
+import com.vaadin.v7.data.Buffered;
+import com.vaadin.v7.data.Property;
+import com.vaadin.v7.data.Validatable;
+import com.vaadin.v7.data.Validator;
+import com.vaadin.v7.data.Validator.InvalidValueException;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Upload.FinishedEvent;
-import com.vaadin.ui.Upload.FinishedListener;
-import com.vaadin.ui.Upload.ProgressListener;
-import com.vaadin.ui.Upload.Receiver;
-import com.vaadin.ui.Upload.StartedEvent;
-import com.vaadin.ui.Upload.StartedListener;
+import com.vaadin.v7.ui.Upload.FinishedEvent;
+import com.vaadin.v7.ui.Upload.FinishedListener;
+import com.vaadin.v7.ui.Upload.ProgressListener;
+import com.vaadin.v7.ui.Upload.Receiver;
+import com.vaadin.v7.ui.Upload.StartedEvent;
+import com.vaadin.v7.ui.Upload.StartedListener;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -91,8 +91,7 @@ public class UploadField extends CssLayout implements Field, StartedListener,
         setWidth("200px");
         setStorageMode(mode);
         upload = new Upload(null, receiver);
-        upload.setImmediate(true);
-        upload.addListener((StartedListener) this);
+        upload.addStartedListener((StartedListener) this);
         upload.addListener((FinishedListener) this);
         upload.addListener((ProgressListener) this);
         upload.setButtonCaption("Choose File");

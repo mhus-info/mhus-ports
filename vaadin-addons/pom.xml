@@ -13,6 +13,7 @@
       <profile>
         <id>release</id>
 		  <modules>
+		  <!-- 
 		  	<module>vaadin-easyuploads</module>
 		  	<module>vaadin-viritin</module>
 		  	<module>vaadin-borderlayout</module>
@@ -24,6 +25,7 @@
 		  	<module>vaadin-contextmenu</module>
 		  	<module>vaadin-refresher</module>
 		  	<module>vaadin-ckeditor</module>
+		   -->
 		  </modules>
       </profile>
 	  <profile>
@@ -32,6 +34,7 @@
 	      <activeByDefault>true</activeByDefault>
 	    </activation>
 		  <modules>
+		  <!-- 
 		  	<module>easyuploads</module>
 		  	<module>vaadin-easyuploads</module>
 		  	<module>vaadin-viritin</module>
@@ -48,6 +51,7 @@
 		  	<module>vaadin-contextmenu</module>
 		  	<module>vaadin-refresher</module>
 		  	<module>vaadin-ckeditor</module>
+		   -->
 		  </modules>
 	  </profile>
    </profiles>
