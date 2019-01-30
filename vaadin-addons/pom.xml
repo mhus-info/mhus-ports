@@ -34,6 +34,8 @@
 	      <activeByDefault>true</activeByDefault>
 	    </activation>
 		  <modules>
+            <module>ckeditor</module>
+            <module>vaadin-ckeditor</module>
 		  <!-- 
 		  	<module>easyuploads</module>
 		  	<module>vaadin-easyuploads</module>

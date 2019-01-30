@@ -37,11 +37,11 @@
    	<!-- https://vaadin.com/directory#!addon/ckeditor-wrapper-for-vaadin -->
    	<!-- https://github.com/OpenESignForms/vaadin-ckeditor/tree/master/VaadinCKEditor -->
    	
-<dependency>
-   <groupId>org.vaadin.addons</groupId>
-   <artifactId>ckeditor-wrapper-for-vaadin</artifactId>
-   <version>7.11.1</version>
-</dependency>
+	<dependency>
+	   <groupId>org.vaadin.addons</groupId>
+	   <artifactId>ckeditor</artifactId>
+	   <version>7.11.1.mhus1</version>
+	</dependency>
 
 </dependencies>
 

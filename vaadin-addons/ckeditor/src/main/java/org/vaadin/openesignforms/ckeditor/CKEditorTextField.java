@@ -16,8 +16,6 @@ import java.util.Set;
 
 import org.vaadin.openesignforms.ckeditor.widgetset.client.ui.VCKEditorTextField;
 
-import com.vaadin.data.Property;
-import com.vaadin.data.util.converter.Converter;
 import com.vaadin.event.ConnectorEventListener;
 import com.vaadin.event.FieldEvents;
 import com.vaadin.event.FieldEvents.BlurEvent;
@@ -26,6 +24,7 @@ import com.vaadin.event.FieldEvents.FocusEvent;
 import com.vaadin.event.FieldEvents.FocusListener;
 import com.vaadin.server.PaintException;
 import com.vaadin.server.PaintTarget;
+import com.vaadin.shared.Registration;
 import com.vaadin.ui.AbstractField;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.LegacyComponent;
@@ -78,33 +77,33 @@ public class CKEditorTextField extends AbstractField<String>
 	}
 	
 	@Override
-    public void setValue(String newValue) throws Property.ReadOnlyException, Converter.ConversionException {
+    public void setValue(String newValue) {
     	if ( newValue == null )
     		newValue = "";
     	super.setValue(newValue, false);  // will call setInternalValue
     	markAsDirty();
     }
 	
-	@Override
-	protected void setInternalValue(String newValue) {
-		super.setInternalValue(newValue==null?"":newValue);
-    	textIsDirty = true;
-    }
-	
- 	@SuppressWarnings("rawtypes")
-	@Override
- 	public void setPropertyDataSource(Property newDataSource) {
- 		super.setPropertyDataSource(newDataSource);
- 		markAsDirty();
-     	textIsDirty = true;
- 	}
- 
- 	@Override
- 	protected void fireValueChange(boolean repaintIsNotNeeded) {
- 		super.fireValueChange(repaintIsNotNeeded);
- 		textIsDirty = true;
- 	}	
- 	
+//	@Override
+//	protected void setInternalValue(String newValue) {
+//		super.setInternalValue(newValue==null?"":newValue);
+//    	textIsDirty = true;
+//    }
+//	
+// 	@SuppressWarnings("rawtypes")
+//	@Override
+// 	public void setPropertyDataSource(Property newDataSource) {
+// 		super.setPropertyDataSource(newDataSource);
+// 		markAsDirty();
+//     	textIsDirty = true;
+// 	}
+// 
+// 	@Override
+// 	protected void fireValueChange(boolean repaintIsNotNeeded) {
+// 		super.fireValueChange(repaintIsNotNeeded);
+// 		textIsDirty = true;
+// 	}	
+// 	
  	@Override
 	public void beforeClientResponse(boolean initial) {
 		if (initial) {
@@ -224,47 +223,15 @@ public class CKEditorTextField extends AbstractField<String>
         	notifyVaadinSaveListeners();
         }
     }
-
-
+	
 	@Override
-	public Class<String> getType() {
-		return String.class;
+    public Registration addBlurListener(BlurListener listener) {
+		return addListener(BlurEvent.EVENT_ID, BlurEvent.class, listener, BlurListener.blurMethod);
 	}
 	
 	@Override
-	public void addListener(BlurListener listener) {
-        addListener(BlurEvent.EVENT_ID, BlurEvent.class, listener, BlurListener.blurMethod);
-	}
-	@Override
-	public void addBlurListener(BlurListener listener) {
-		addListener(BlurEvent.EVENT_ID, BlurEvent.class, listener, BlurListener.blurMethod);
-	}
-	
-	@Override
-	public void removeListener(BlurListener listener) {
-        removeListener(BlurEvent.EVENT_ID, BlurEvent.class, listener);
-	}
-	@Override
-	public void removeBlurListener(BlurListener listener) {
-		removeListener(BlurEvent.EVENT_ID, BlurEvent.class, listener);
-	}
-	
-	@Override
-	public void addListener(FocusListener listener) {
-        addListener(FocusEvent.EVENT_ID, FocusEvent.class, listener, FocusListener.focusMethod);
-	}
-	@Override
-	public void addFocusListener(FocusListener listener) {
-		addListener(FocusEvent.EVENT_ID, FocusEvent.class, listener, FocusListener.focusMethod);
-	}
-
-	@Override
-	public void removeListener(FocusListener listener) {
-        removeListener(FocusEvent.EVENT_ID, FocusEvent.class, listener);
-	}
-	@Override
-	public void removeFocusListener(FocusListener listener) {
-		removeListener(FocusEvent.EVENT_ID, FocusEvent.class, listener);
+    public Registration addFocusListener(FocusListener listener) {
+		return addListener(FocusEvent.EVENT_ID, FocusEvent.class, listener, FocusListener.focusMethod);
 	}
 	
 	/**
@@ -388,6 +355,18 @@ public class CKEditorTextField extends AbstractField<String>
                 SelectionChangeListener.class, "selectionChange", SelectionChangeEvent.class);
         
         public void selectionChange(SelectionChangeEvent event);
+    }
+
+    @Override
+    public String getValue() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    protected void doSetValue(String value) {
+        // TODO Auto-generated method stub
+        
     }
 
 }

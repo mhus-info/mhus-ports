@@ -11,11 +11,11 @@ package org.vaadin.openesignforms.ckeditor;
 //import org.vaadin.openesignforms.ckeditor.CKEditorTextField.SelectionChangeListener;
 
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.shared.ui.label.ContentMode;
+import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.UI;
 import com.vaadin.annotations.Theme;
-import com.vaadin.data.Property;
-import com.vaadin.data.Property.ValueChangeEvent;
+import com.vaadin.data.HasValue.ValueChangeEvent;
+import com.vaadin.data.HasValue.ValueChangeListener;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -88,11 +88,12 @@ public class VaadinCKEditorUI extends UI {
 		mainView.addComponent(ckEditorTextField1);
 		
 		ckEditorTextField1.setValue(editor1InitialValue);
-		ckEditorTextField1.addValueChangeListener(new Property.ValueChangeListener() {
+		ckEditorTextField1.addValueChangeListener(new ValueChangeListener<String>() {
 			private static final long serialVersionUID = -761434593559159149L;
 
-			public void valueChange(ValueChangeEvent event) {
-				Notification.show("CKEditor v" + ckEditorTextField1.getVersion() + "/" + getVersion() + " - #1 contents: " + event.getProperty().getValue().toString());
+			@Override
+            public void valueChange(ValueChangeEvent<String> event) {
+				Notification.show("CKEditor v" + ckEditorTextField1.getVersion() + "/" + getVersion() + " - #1 contents: " + event.getValue().toString());
 			}
 		});
 		
@@ -178,11 +179,12 @@ public class VaadinCKEditorUI extends UI {
 		ckEditorTextField2.setConfig(config2);
 		ckEditorTextField2.setValue(editor2InitialValue);
 		
-		ckEditorTextField2.addValueChangeListener(new Property.ValueChangeListener() {
+		ckEditorTextField2.addValueChangeListener(new ValueChangeListener<String>() {
 			private static final long serialVersionUID = 1522230917891035997L;
 
-			public void valueChange(ValueChangeEvent event) {
-				Notification.show("CKEditor v" + ckEditorTextField2.getVersion() + "/" + getVersion() + " - #2 contents: " + event.getProperty().getValue().toString());
+			@Override
+            public void valueChange(ValueChangeEvent<String> event) {
+				Notification.show("CKEditor v" + ckEditorTextField2.getVersion() + "/" + getVersion() + " - #2 contents: " + event.getValue().toString());
 			}
 		});
 
@@ -271,11 +273,12 @@ public class VaadinCKEditorUI extends UI {
                     config.setHeight("150px");
                     
                     final CKEditorTextField ckEditorTextField = new CKEditorTextField(config);
-	                ckEditorTextField.addValueChangeListener(new Property.ValueChangeListener() {
+	                ckEditorTextField.addValueChangeListener(new ValueChangeListener<String>() {
 						private static final long serialVersionUID = -1308863170484877239L;
 
-						public void valueChange(ValueChangeEvent event) {
-							Notification.show("CKEditor v" + ckEditorTextField.getVersion() + "/" + getVersion() + " - POPUP MODAL contents: " + event.getProperty().getValue().toString());
+						@Override
+                        public void valueChange(ValueChangeEvent<String> event) {
+							Notification.show("CKEditor v" + ckEditorTextField.getVersion() + "/" + getVersion() + " - POPUP MODAL contents: " + event.getValue().toString());
 	        			}
 	        		});
 	                ckEditorTextField.addVaadinSaveListener( new CKEditorTextField.VaadinSaveListener() {
@@ -324,11 +327,12 @@ public class VaadinCKEditorUI extends UI {
 	                
 	                final CKEditorTextField ckEditorTextField = new CKEditorTextField(config);
 	                ckEditorTextField.setHeight("100%");
-	                ckEditorTextField.addValueChangeListener(new Property.ValueChangeListener() {
+	                ckEditorTextField.addValueChangeListener(new ValueChangeListener<String>() {
 						private static final long serialVersionUID = 5592423527258867304L;
 
-						public void valueChange(ValueChangeEvent event) {
-							Notification.show("CKEditor v" + ckEditorTextField.getVersion() + "/" + getVersion() + " - POPUP NON-MODAL 100% HEIGHT contents: " + event.getProperty().getValue().toString());
+						@Override
+                        public void valueChange(ValueChangeEvent<String> event) {
+							Notification.show("CKEditor v" + ckEditorTextField.getVersion() + "/" + getVersion() + " - POPUP NON-MODAL 100% HEIGHT contents: " + event.getValue().toString());
 	        			}
 	        		});
 	                ckEditorTextField.addVaadinSaveListener( new CKEditorTextField.VaadinSaveListener() {
@@ -344,11 +348,12 @@ public class VaadinCKEditorUI extends UI {
 	                subLayout.setExpandRatio(ckEditorTextField,10);
 	                
 	                final TextField textField = new TextField("TextField");
-	                textField.addValueChangeListener(new Property.ValueChangeListener() {
+	                textField.addValueChangeListener(new ValueChangeListener<String>() {
 						private static final long serialVersionUID = 6686202497483757206L;
 
-						public void valueChange(ValueChangeEvent event) {
-							Notification.show("TextField - POPUP NON-MODAL 100% HEIGHT contents: " + event.getProperty().getValue().toString());
+						@Override
+                        public void valueChange(ValueChangeEvent<String> event) {
+							Notification.show("TextField - POPUP NON-MODAL 100% HEIGHT contents: " + event.getValue().toString());
 	        			}
 	        		});
 	                subLayout.addComponent(textField);
