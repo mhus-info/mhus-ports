@@ -1,11 +1,12 @@
 package com.github.wolfie.refresher;
 
 import com.github.wolfie.refresher.Refresher.RefreshListener;
-import com.vaadin.Application;
+import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 
-public class RefresherApplication extends Application {
+public class RefresherApplication extends UI {
   
   public class DatabaseListener implements RefreshListener {
     /**
@@ -48,19 +49,20 @@ public class RefresherApplication extends Application {
   private Label content;
   
   @Override
-  public void init() {
+  public void init(VaadinRequest request) {
     final Window mainWindow = new Window("Refresher Database Example");
-    setMainWindow(mainWindow);
+    setContent(mainWindow);
     
     // present with a loading contents.
     content = new Label("please wait while the database is queried");
-    mainWindow.addComponent(content);
+    mainWindow.setContent(content);
     
     // the Refresher polls automatically
     final Refresher refresher = new Refresher();
     refresher.addListener(new DatabaseListener());
-    mainWindow.addComponent(refresher);
+    mainWindow.setContent(refresher);
     
     new DatabaseQueryProcess().start();
   }
+
 }

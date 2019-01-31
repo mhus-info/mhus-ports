@@ -16,14 +16,16 @@
 
 package com.github.wolfie.refresher.client.ui;
 
+import java.util.Date;
+
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.Widget;
-import com.vaadin.terminal.gwt.client.ApplicationConnection;
-import com.vaadin.terminal.gwt.client.BrowserInfo;
-import com.vaadin.terminal.gwt.client.Paintable;
-import com.vaadin.terminal.gwt.client.UIDL;
+import com.vaadin.client.ApplicationConnection;
+import com.vaadin.client.Paintable;
+import com.vaadin.client.UIDL;
 
+@SuppressWarnings("deprecation")
 public class VRefresher extends Widget implements Paintable {
 
   public static final String TAGNAME = "refresher";
@@ -40,14 +42,15 @@ public class VRefresher extends Widget implements Paintable {
 
   public VRefresher() {
     setElement(Document.get().createDivElement());
-    if (BrowserInfo.get().isIE6()) {
-      getElement().getStyle().setProperty("overflow", "hidden");
-      getElement().getStyle().setProperty("height", "0");
-    }
+//    if (BrowserInfo.get().isIE6()) {
+//      getElement().getStyle().setProperty("overflow", "hidden");
+//      getElement().getStyle().setProperty("height", "0");
+//    }
     poller = new Poller();
   }
 
-  public void updateFromUIDL(final UIDL uidl, final ApplicationConnection client) {
+@Override
+public void updateFromUIDL(final UIDL uidl, final ApplicationConnection client) {
     this.client = client;
     final boolean cached = uidl.getBooleanAttribute("cached");
     if (!cached) {
@@ -85,7 +88,7 @@ public class VRefresher extends Widget implements Paintable {
     @Override
     public void run() {
       // Just send something, to trigger the server side event.
-      client.updateVariable(client.getPid(getElement()),
+      client.updateVariable(new Date().toString(),
           VARIABLE_REFRESH_EVENT, 0, false);
       client.sendPendingVariableChanges();
     }

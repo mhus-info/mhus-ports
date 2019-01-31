@@ -1,16 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.vaadin.addons</groupId>
-    <artifactId>ckeditor</artifactId>
+    <artifactId>refresher</artifactId>
   <parent>
     <groupId>de.mhus.ports</groupId>
     <version>1.3.7-SNAPSHOT</version>
     <artifactId>vaadin-addons</artifactId>
   </parent>
-    <!-- 
-    <version>7.11.1.mhus1</version>
-     -->
-    <name>CKEditor</name>
+    <name>Refresher</name>
 
     <organization>
         <name>Vaadin Community</name>
@@ -54,7 +51,7 @@
 
                             <!-- Comma-separated list of widgetsets in the package -->
                             <!-- TODO figure out a way make this automatically configured -->
-                            <Vaadin-Widgetsets>org.vaadin.easyuploads.Widgetset</Vaadin-Widgetsets>
+                            <Vaadin-Widgetsets>com.github.wolfie.refresher.RefresherApplicationWidgetset</Vaadin-Widgetsets>
                         </manifestEntries>
                     </archive>
                     <excludes>
@@ -166,7 +163,7 @@
                         <strict>true</strict>
                         <!-- We only need to compile the test widgetset, if not defined gwt 
                         module will also compile the add-on widgetset as well -->
-                        <module>org.vaadin.openesignforms.ckeditor.widgetset.VaadinCKEditorWidgetset</module>
+                        <module>com.github.wolfie.refresher.RefresherApplicationWidgetset</module>
                         <!-- If you do lots of e.g. plain css changes and don't wish to use 
                         hosted mode, you can force compile easily with uncommenting following rule -->
                         <force>true</force>

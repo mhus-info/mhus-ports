@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.github.wolfie.refresher.client.ui.VRefresher;
-import com.vaadin.terminal.PaintException;
-import com.vaadin.terminal.PaintTarget;
+import com.vaadin.server.PaintException;
+import com.vaadin.server.PaintTarget;
 import com.vaadin.ui.AbstractComponent;
 
 /**
@@ -18,7 +18,7 @@ import com.vaadin.ui.AbstractComponent;
  * 
  * @author Henrik Paul
  */
-@com.vaadin.ui.ClientWidget(com.github.wolfie.refresher.client.ui.VRefresher.class)
+//@com.vaadin.ui.ClientWidget(com.github.wolfie.refresher.client.ui.VRefresher.class)
 public class Refresher extends AbstractComponent {
   
   public interface RefreshListener extends Serializable {
@@ -41,7 +41,7 @@ public class Refresher extends AbstractComponent {
     super();
   }
   
-  @Override
+//  @Override
   public void paintContent(final PaintTarget target) throws PaintException {
     target.addAttribute("pollinginterval", refreshIntervalInMillis);
   }
@@ -68,11 +68,11 @@ public class Refresher extends AbstractComponent {
     return refreshIntervalInMillis;
   }
   
-  @Override
+//  @Override
   @SuppressWarnings("unchecked")
   public void changeVariables(final Object source,
       @SuppressWarnings("rawtypes") final Map variables) {
-    super.changeVariables(source, variables);
+//    super.changeVariables(source, variables);
     
     if (variables.containsKey(VRefresher.VARIABLE_REFRESH_EVENT)) {
       fireRefreshEvents();
