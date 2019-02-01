@@ -79,10 +79,6 @@
                             <Vaadin-Widgetsets>org.vaadin.easyuploads.Widgetset</Vaadin-Widgetsets>
                         </manifestEntries>
                     </archive>
-                    <excludes>
-                        <!-- Remove resources included due to gwt compilation -->
-                        <exclude>**/demoandtestapp/*</exclude>
-                    </excludes>
                 </configuration>
             </plugin>
 
@@ -140,18 +136,6 @@
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>testwidgetset</id>
-                        <phase>test-compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <configuration>
-                            <skip>${skipTests}</skip>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
 
@@ -186,11 +170,7 @@
                         <draftCompile>true</draftCompile>
                         <style>PRETTY</style>
                         <strict>true</strict>
-                        <!-- We only need to compile the test widgetset, if not defined gwt 
-                        module will also compile the add-on widgetset as well -->
-                        <module>org.vaadin.easyuploads.demoandtestapp.TestWidgetset</module>
-                        <!-- If you do lots of e.g. plain css changes and don't wish to use 
-                        hosted mode, you can force compile easily with uncommenting following rule -->
+                        <module>org.vaadin.easyuploads.Widgetset</module>
                         <force>true</force>
                     </configuration>
                 </plugin>

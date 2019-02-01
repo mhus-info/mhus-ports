@@ -148,11 +148,7 @@
                         <draftCompile>true</draftCompile>
                         <style>PRETTY</style>
                         <strict>true</strict>
-                        <!-- We only need to compile the test widgetset, if not defined gwt 
-                        module will also compile the add-on widgetset as well -->
                         <module>org.vaadin.alump.ckeditor.WidgetSet</module>
-                        <!-- If you do lots of e.g. plain css changes and don't wish to use 
-                        hosted mode, you can force compile easily with uncommenting following rule -->
                         <force>true</force>
                     </configuration>
                 </plugin>
