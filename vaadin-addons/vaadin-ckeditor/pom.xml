@@ -25,7 +25,7 @@
                         	META-INF*
                         </Export-Package>
                         <Import-Package>*;resolution:=optional</Import-Package>
-						<Embed-Dependency>ckeditor-wrapper-for-vaadin</Embed-Dependency>
+						<Embed-Dependency>ckeditor</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>            
