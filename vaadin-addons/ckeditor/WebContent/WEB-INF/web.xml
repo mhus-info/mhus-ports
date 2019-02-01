@@ -25,7 +25,7 @@
     <init-param>
       <description>Application widgetset</description>
       <param-name>widgetset</param-name>
-      <param-value>org.vaadin.openesignforms.ckeditor.widgetset.VaadinCKEditorWidgetset</param-value>
+      <param-value>org.vaadin.alump.ckeditor.WidgetSet</param-value>
     </init-param>
     <init-param>
       <description>Want idle sessions to expire, after 3 missed heartbeats, since heartbeat will otherwise keep alive as long as the browser is open</description>
