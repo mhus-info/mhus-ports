@@ -13,8 +13,10 @@
       <profile>
         <id>release</id>
 		  <modules>
+            <module>vaadin-easyuploads</module>
+            <module>vaadin-refresher</module>
+            <module>vaadin-ckeditor</module>
 		  <!-- 
-		  	<module>vaadin-easyuploads</module>
 		  	<module>vaadin-viritin</module>
 		  	<module>vaadin-borderlayout</module>
 		  	<module>vaadin-sliderpanel</module>
@@ -23,8 +25,6 @@
 		  	<module>vaadin-jfreechart</module>
 		  	<module>vaadin-flatselect</module>
 		  	<module>vaadin-contextmenu</module>
-		  	<module>vaadin-refresher</module>
-		  	<module>vaadin-ckeditor</module>
 		   -->
 		  </modules>
       </profile>
@@ -36,9 +36,15 @@
 		  <modules>
             <module>ckeditor</module>
             <module>vaadin-ckeditor</module>
+            
+            <module>easyuploads</module>
+            <module>vaadin-easyuploads</module>
+            
+            
 		  <!-- 
-		  	<module>easyuploads</module>
-		  	<module>vaadin-easyuploads</module>
+            <module>refresher</module>
+            <module>vaadin-refresher</module>
+            
 		  	<module>vaadin-viritin</module>
 		  	<module>vaadin-borderlayout</module>
 		  	<module>sliderpanel</module>
@@ -51,8 +57,6 @@
 		  	<module>flatselect</module>
 		  	<module>vaadin-flatselect</module>
 		  	<module>vaadin-contextmenu</module>
-		  	<module>vaadin-refresher</module>
-		  	<module>vaadin-ckeditor</module>
 		   -->
 		  </modules>
 	  </profile>

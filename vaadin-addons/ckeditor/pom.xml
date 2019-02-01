@@ -31,8 +31,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
@@ -54,13 +54,9 @@
 
                             <!-- Comma-separated list of widgetsets in the package -->
                             <!-- TODO figure out a way make this automatically configured -->
-                            <Vaadin-Widgetsets>org.vaadin.easyuploads.Widgetset</Vaadin-Widgetsets>
+                            <Vaadin-Widgetsets>org.vaadin.alump.ckeditor.WidgetSet</Vaadin-Widgetsets>
                         </manifestEntries>
                     </archive>
-                    <excludes>
-                        <!-- Remove resources included due to gwt compilation -->
-                        <exclude>**/demoandtestapp/*</exclude>
-                    </excludes>
                 </configuration>
             </plugin>
 
@@ -118,18 +114,6 @@
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>testwidgetset</id>
-                        <phase>test-compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <configuration>
-                            <skip>${skipTests}</skip>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
 
@@ -166,7 +150,7 @@
                         <strict>true</strict>
                         <!-- We only need to compile the test widgetset, if not defined gwt 
                         module will also compile the add-on widgetset as well -->
-                        <module>org.vaadin.openesignforms.ckeditor.widgetset.VaadinCKEditorWidgetset</module>
+                        <module>org.vaadin.alump.ckeditor.WidgetSet</module>
                         <!-- If you do lots of e.g. plain css changes and don't wish to use 
                         hosted mode, you can force compile easily with uncommenting following rule -->
                         <force>true</force>
