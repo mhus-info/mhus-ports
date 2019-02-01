@@ -14,7 +14,6 @@
         <id>release</id>
 		  <modules>
             <module>vaadin-easyuploads</module>
-            <module>vaadin-refresher</module>
             <module>vaadin-ckeditor</module>
 		  <!-- 
 		  	<module>vaadin-viritin</module>
@@ -25,6 +24,7 @@
 		  	<module>vaadin-jfreechart</module>
 		  	<module>vaadin-flatselect</module>
 		  	<module>vaadin-contextmenu</module>
+            <module>vaadin-refresher</module>
 		   -->
 		  </modules>
       </profile>
