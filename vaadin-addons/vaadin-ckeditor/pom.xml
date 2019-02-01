@@ -21,7 +21,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                        	org.vaadin.openesignforms.ckeditor.*,
+                        	org.vaadin.alump.ckeditor*,
                         	META-INF*
                         </Export-Package>
                         <Import-Package>*;resolution:=optional</Import-Package>
