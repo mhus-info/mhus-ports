@@ -21,7 +21,6 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                        	org.swfupload.*,
                         	org.vaadin.easyuploads.*,
                         	META-INF*
                         </Export-Package>
