@@ -895,13 +895,24 @@ public class File implements Comparable {
 				md.update(buf, 0, i);
 			}
 			input.close();
-			return new javax.xml.bind.annotation.adapters.HexBinaryAdapter().marshal(md.digest()).toLowerCase();
+			return bytesToHex( md.digest()).toLowerCase();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
 
+	private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
+	public static String bytesToHex(byte[] bytes) {
+	    char[] hexChars = new char[bytes.length * 2];
+	    for ( int j = 0; j < bytes.length; j++ ) {
+	        int v = bytes[j] & 0xFF;
+	        hexChars[j * 2] = hexArray[v >>> 4];
+	        hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+	    }
+	    return new String(hexChars);
+	}
+	
 	// **************************************************************************
 	// ** write
 	// **************************************************************************

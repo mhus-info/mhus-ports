@@ -52,13 +52,13 @@
 		
         <scr.packages>*</scr.packages>
         <felix.scr.version>1.6.0</felix.scr.version>
-        <karaf.version>4.0.10</karaf.version>
-        <karaf.tool.version>4.0.10</karaf.tool.version>
+        <karaf.version>4.2.3</karaf.version>
+        <karaf.tool.version>${karaf.version}</karaf.tool.version>
         <bndlib.version>1.50.0</bndlib.version>
         <felix.metatype.version>1.0.10</felix.metatype.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<compileSource>1.8</compileSource>
-        <bundle.plugin.version>2.5.3</bundle.plugin.version>
+		<compileSource>11</compileSource>
+        <bundle.plugin.version>4.1.0</bundle.plugin.version>
         <osgi.version>5.0.0</osgi.version>
 		<vaadin.version>8.6.1</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
@@ -67,7 +67,7 @@
 		<javax.mail.version>1.4.1</javax.mail.version>
 		<javax.activation.version>1.1.1</javax.activation.version>
         <felix.version>4.2.4</felix.version>
-        <felix.plugin.version>3.0.1</felix.plugin.version>
+        <felix.plugin.version>4.1.0</felix.plugin.version>
         <maven.version>2.0.9</maven.version>
 		<dependency.jetty.version>8.1.14.v20131031</dependency.jetty.version>
 		<pax.version>3.1.0</pax.version>
@@ -98,13 +98,13 @@
     <plugins>
     
             <plugin>
-                <groupId>de.mhus.ports.karaf.tooling</groupId>
+                <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-services-maven-plugin</artifactId>
             </plugin>
     
 		<plugin>
 		  <artifactId>maven-compiler-plugin</artifactId>
-		  <version>3.0</version>
+		  <version>3.8.0</version>
 		  <configuration>
 		    <source>${compileSource}</source>
 		    <target>${compileSource}</target>
