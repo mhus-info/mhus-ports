@@ -77,8 +77,8 @@
     <modules>
     <!-- deprecated
 	    <module>ports-common-discovery</module>
-     -->
 	    <module>ports-javaxt</module>
+     -->
 	    <module>ports-jrandtest</module>
 
 	    <module>ports-flummi</module>
@@ -169,6 +169,7 @@
     
     	<pluginManagement>
 			<plugins>
+			<!-- 
                 <plugin>
                     <groupId>de.mhus.ports.karaf.tooling</groupId>
                     <artifactId>karaf-services-maven-plugin</artifactId>
@@ -186,6 +187,7 @@
                         </execution>
                     </executions>
                 </plugin>
+			 -->
 			</plugins>    	
     	</pluginManagement>
     	    
