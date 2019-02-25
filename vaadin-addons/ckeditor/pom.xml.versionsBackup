@@ -4,7 +4,7 @@
     <artifactId>ckeditor</artifactId>
   <parent>
     <groupId>de.mhus.ports</groupId>
-    <version>1.3.7</version>
+    <version>1.3.7-SNAPSHOT</version>
     <artifactId>vaadin-addons</artifactId>
   </parent>
     <!-- 
