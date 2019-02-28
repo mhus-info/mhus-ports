@@ -24,7 +24,7 @@
 	<packaging>bundle</packaging>
 	<parent>
 		<groupId>de.mhus.ports</groupId>
-		<version>1.3.8-SNAPSHOT</version>
+		<version>1.6.0-SNAPSHOT</version>
 		<artifactId>mhus-ports</artifactId>
 	</parent>
 
@@ -33,7 +33,6 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>${bundle.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
@@ -61,28 +60,22 @@
 		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>org.osgi.core</artifactId>
-			<version>${osgi.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>org.osgi.compendium</artifactId>
-			<version>${osgi.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>biz.aQute</groupId>
-			<artifactId>bndlib</artifactId>
-			<version>${bndlib.version}</version>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bndlib</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
-			<version>${javax.mail.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
-			<version>${javax.activation.version}</version>
 		</dependency>
 	</dependencies>
 </project>

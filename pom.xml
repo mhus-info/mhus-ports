@@ -19,11 +19,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.mhus.lib</groupId>
+        <version>3.6.0-SNAPSHOT</version>
+        <artifactId>mhus-karaf</artifactId>
+    </parent>
     <artifactId>mhus-ports</artifactId>
     <packaging>pom</packaging>
   <name>ports</name>
   <groupId>de.mhus.ports</groupId>
-  <version>1.3.8-SNAPSHOT</version>
+  <version>1.6.0-SNAPSHOT</version>
 
   <description>A set of tools to improve OSGi frameworks and karaf</description>
   <url>http://www.mhus.de</url>
@@ -47,32 +52,6 @@
       <url>http://www.mhus.de</url>
     </developer>
   </developers>
-    <properties>
-		<mhulib.version>3.5.1-SNAPSHOT</mhulib.version>
-		
-        <scr.packages>*</scr.packages>
-        <felix.scr.version>1.6.0</felix.scr.version>
-        <karaf.version>4.2.3</karaf.version>
-        <karaf.tool.version>${karaf.version}</karaf.tool.version>
-        <bndlib.version>1.50.0</bndlib.version>
-        <felix.metatype.version>1.0.10</felix.metatype.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<compileSource>11</compileSource>
-        <bundle.plugin.version>4.1.0</bundle.plugin.version>
-        <osgi.version>5.0.0</osgi.version>
-		<vaadin.version>8.6.1</vaadin.version>
-		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
-		<gwt.version>2.3.0</gwt.version>
-		<gwt.plugin.version>2.2.0</gwt.plugin.version>
-		<javax.mail.version>1.4.1</javax.mail.version>
-		<javax.activation.version>1.1.1</javax.activation.version>
-        <felix.version>4.2.4</felix.version>
-        <felix.plugin.version>4.1.0</felix.plugin.version>
-        <maven.version>2.0.9</maven.version>
-		<dependency.jetty.version>8.1.14.v20131031</dependency.jetty.version>
-		<pax.version>3.1.0</pax.version>
-		<servlet.version>3.1.0</servlet.version>
-      </properties>
 
     <modules>
     <!-- deprecated
@@ -91,166 +70,5 @@
 	    <module>vaadin-shared-deps</module>
 	    <module>vaadin-addons</module>
     </modules>
-
-   <build>
-           <defaultGoal>install</defaultGoal>
-	
-    <plugins>
     
-            <plugin>
-                <groupId>org.apache.karaf.tooling</groupId>
-                <artifactId>karaf-services-maven-plugin</artifactId>
-            </plugin>
-    
-		<plugin>
-		  <artifactId>maven-compiler-plugin</artifactId>
-		  <version>3.8.0</version>
-		  <configuration>
-		    <source>${compileSource}</source>
-		    <target>${compileSource}</target>
-		  </configuration>
-		</plugin>    
-
-        <plugin>
-		  <artifactId>maven-assembly-plugin</artifactId>
-		  <version>2.1</version> 
-		  <configuration>
-		    <finalName>doc</finalName>
-		    <descriptors>
-		      <descriptor>descriptor.xml</descriptor>
-		    </descriptors>
-		  </configuration>
-		</plugin> 
-
-		<plugin>
-	      <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-javadoc-plugin</artifactId>
-	      <version>2.9.1</version>
-	      <configuration>
-	      	<failOnError>false</failOnError>
-	      </configuration>
-		  <executions>
-		       <execution>
-		         <id>attach-javadocs</id>
-		         <goals>
-		           <goal>jar</goal>
-		         </goals>
-		       </execution>
-		     </executions>	      
-	    </plugin>		
-
-      <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.7</version>
-          <extensions>true</extensions>
-          <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
-          </configuration>
-      </plugin>
-
-	    <plugin>
-	      <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-source-plugin</artifactId>
-	      <version>2.2.1</version>
-	      <executions>
-	        <execution>
-	          <id>attach-sources</id>
-	          <goals>
-	            <goal>jar-no-fork</goal>
-	          </goals>
-	        </execution>
-	      </executions>
-	    </plugin>
-	    				
-    </plugins>
-    
-    	<pluginManagement>
-			<plugins>
-			<!-- 
-                <plugin>
-                    <groupId>de.mhus.ports.karaf.tooling</groupId>
-                    <artifactId>karaf-services-maven-plugin</artifactId>
-                    <version>${karaf.tool.version}</version>
-                    <executions>
-                        <execution>
-                            <id>service-metadata-generate</id>
-                            <phase>process-classes</phase>
-                            <goals>
-                                <goal>service-metadata-generate</goal>
-                            </goals>
-			                <configuration>
-			                	<artifactInclude>.*mhu.*</artifactInclude>
-			                </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-			 -->
-			</plugins>    	
-    	</pluginManagement>
-    	    
-  </build>
-
-	<distributionManagement>
-     <snapshotRepository>
-	    <id>ossrh</id>
-	    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-	  </snapshotRepository>
-	  <repository>
-	    <id>ossrh</id>
-	    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-	  </repository>
-	</distributionManagement>
-
-        <profiles>
-          <profile>
-            <id>release</id>
-            <activation>
-              <property>
-                <name>performRelease</name>
-                <value>true</value>
-              </property>
-            </activation>
-            <build>
-              <plugins>
-                <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-gpg-plugin</artifactId>
-                  <version>1.4</version>
-                  <configuration>
-                    <passphrase>${gpg.passphrase}</passphrase>
-                  </configuration>
-                  <executions>
-                    <execution>
-                      <id>sign-artifacts</id>
-                      <phase>verify</phase>
-                      <goals>
-                        <goal>sign</goal>
-                      </goals>
-                    </execution>
-                  </executions>
-                </plugin>
-              </plugins>
-            </build>
-          </profile>
-
-        </profiles>
-
-	<dependencyManagement>
-		<dependencies>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <version>${felix.plugin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-plugin-api</artifactId>
-                <version>${maven.version}</version>
-            </dependency>
-		</dependencies>
-	</dependencyManagement>
-
 </project>
