@@ -251,52 +251,40 @@
             <scope>provided</scope>
         </dependency>
          -->
+         <!-- 
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-themes</artifactId>
             <version>${vaadin.version}</version>
             <scope>test</scope>
         </dependency>
+          -->
 
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-compatibility-server</artifactId>
-            <version>${vaadin.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-compatibility-client</artifactId>
-            <version>${vaadin.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-compatibility-themes</artifactId>
-            <version>${vaadin.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
-            <version>7.2.2.v20101205</version>
             <scope>test</scope>
         </dependency>
         
         <dependency>
             <groupId>org.vaadin</groupId>
             <artifactId>addon-test-helpers</artifactId>
-            <version>1.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- If you have testbench licence, use that instead of raw selenium. Much 
-        more robust results -->
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-testbench</artifactId>
-            <version>3.0.4</version>
             <scope>test</scope>
         </dependency>
 
