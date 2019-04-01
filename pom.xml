@@ -28,7 +28,7 @@
     <packaging>pom</packaging>
   <name>ports</name>
   <groupId>de.mhus.ports</groupId>
-  <version>1.6.1</version>
+  <version>1.6.2-SNAPSHOT</version>
 
   <description>A set of tools to improve OSGi frameworks and karaf</description>
   <url>http://www.mhus.de</url>
