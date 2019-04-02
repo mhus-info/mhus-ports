@@ -11,7 +11,7 @@
     <profiles>
     
       <profile>
-        <id>release</id>
+        <id>release-mhus</id>
 		  <modules>
             <module>vaadin-easyuploads</module>
             <module>vaadin-ckeditor</module>
