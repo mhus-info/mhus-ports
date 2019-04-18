@@ -1,7 +1,7 @@
 package org.apache.commons.discovery.defaults;
 
 import de.mhus.lib.core.lang.MObject;
-import de.mhus.lib.core.MApi;
+import de.mhus.lib.core.M;
 
 public class Defaults extends MObject {
 
@@ -17,7 +17,7 @@ public class Defaults extends MObject {
 
 		try {
 			Class<?> ifc = Class.forName(name);
-			Object obj = MApi.lookup(ifc);
+			Object obj = M.l(ifc);
 			if (obj != null) return obj.getClass();
 		} catch (Throwable e) {
 		}
