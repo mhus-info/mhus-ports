@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>de.mhus.lib</groupId>
-        <version>3.6.0</version>
+        <version>3.6.3-SNAPSHOT</version>
         <artifactId>mhus-karaf</artifactId>
     </parent>
     <artifactId>mhus-ports</artifactId>
@@ -57,12 +57,12 @@
     <!-- deprecated
 	    <module>ports-common-discovery</module>
 	    <module>ports-javaxt</module>
-     -->
 	    <module>ports-jrandtest</module>
 
 	    <module>ports-flummi</module>
 	    <module>ports-groovy</module>
 	    <module>ports-javaxmail</module>
+     -->
 	    
 	<!-- not changed since 1.3.4
 	    <module>ports-gclib</module>
