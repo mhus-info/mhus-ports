@@ -21,14 +21,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>de.mhus.lib</groupId>
-        <version>3.6.4-SNAPSHOT</version>
+        <version>6.4.0</version>
         <artifactId>mhus-karaf</artifactId>
     </parent>
     <artifactId>mhus-ports</artifactId>
     <packaging>pom</packaging>
   <name>ports</name>
   <groupId>de.mhus.ports</groupId>
-  <version>1.6.1</version>
+  <version>1.6.2</version>
 
   <description>A set of tools to improve OSGi frameworks and karaf</description>
   <url>http://www.mhus.de</url>
@@ -54,8 +54,8 @@
   </developers>
 
     <modules>
-    <!-- deprecated
 	    <module>ports-common-discovery</module>
+    <!-- deprecated
 	    <module>ports-javaxt</module>
 	    <module>ports-jrandtest</module>
 
@@ -66,9 +66,9 @@
 	    
 	<!-- not changed since 1.3.4
 	    <module>ports-gclib</module>
-	 -->    
 	    <module>vaadin-shared-deps</module>
 	    <module>vaadin-addons</module>
+	 -->    
     </modules>
     
 </project>
