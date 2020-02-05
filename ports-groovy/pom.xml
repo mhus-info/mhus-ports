@@ -5,7 +5,7 @@
 	<packaging>bundle</packaging>
 	<parent>
 		<groupId>de.mhus.ports</groupId>
-		<version>1.6.2-SNAPSHOT</version>
+		<version>6.2.0</version>
 		<artifactId>mhus-ports</artifactId>
 	</parent>
 
