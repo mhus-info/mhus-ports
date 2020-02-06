@@ -57,8 +57,8 @@
 	    <module>ports-common-discovery</module>
     <!-- deprecated
 	    <module>ports-javaxt</module>
-	    <module>ports-jrandtest</module>
      -->
+	    <module>ports-jrandtest</module>
 
 	    <module>ports-flummi</module>
 	    <module>ports-groovy</module>
