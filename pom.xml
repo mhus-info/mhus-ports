@@ -52,6 +52,7 @@
   </developers>
 
     <modules>
+        <module>ports-grpc</module>
 	    <module>ports-common-discovery</module>
     <!-- deprecated
 	    <module>ports-javaxt</module>
