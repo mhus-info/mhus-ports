@@ -36,14 +36,21 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							io.grpc*;version=${grpc.version}
+							io.grpc*;version=${grpc.version},
+							io.perfmark;version=0.19.0,
+							com.google.errorprone.annotations;version=2.3.4,
+							*
 						</Export-Package>
 						<Import-Package>
 						com.google.common.*;version=28.2.0,
 						*;resolution:=optional
 						</Import-Package>
 						<DynamicImport-Package>*</DynamicImport-Package>
-						<Embed-Dependency>grpc-api,grpc-auth,grpc-core,grpc-netty,grpc-okhttp,grpc-protobuf,grpc-protobuf-lite</Embed-Dependency>
+						<Embed-Dependency>
+						grpc-api,grpc-auth,grpc-core,grpc-netty,grpc-okhttp,grpc-protobuf,grpc-protobuf-lite,
+						perfmark-api,
+						error_prone_annotations
+						</Embed-Dependency>
 						<Embed-Transitive>true</Embed-Transitive>
 					</instructions>
 				</configuration>
@@ -94,5 +101,17 @@
             <version>${grpc.version}</version>
         </dependency>
 
+
+		<dependency>
+		  <groupId>io.perfmark</groupId>
+		  <artifactId>perfmark-api</artifactId>
+		  <version>0.19.0</version>
+		</dependency>
+		<dependency>
+	    	<groupId>com.google.errorprone</groupId>
+	    	<version>2.3.4</version>
+		    <artifactId>error_prone_annotations</artifactId>
+		</dependency>
 	</dependencies>
+	
 </project>
