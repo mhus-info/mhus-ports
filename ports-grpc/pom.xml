@@ -36,18 +36,18 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							io.grpc*;version=${grpc.version},
-							io.perfmark*;version=0.19.0,
-							com.google.errorprone.annotations*;version=2.3.4,
-							*
+							io.grpc*;version=${grpc.version}
 						</Export-Package>
+						<Private-Package>
+						*
+						</Private-Package>
 						<Import-Package>
-						com.google.common.*;version=28.2.0,
+						com.google.common.*;version=28.2.0-jre,
 						*;resolution:=optional
 						</Import-Package>
 						<DynamicImport-Package>*</DynamicImport-Package>
 						<Embed-Dependency>
-						grpc-api,grpc-auth,grpc-core,grpc-netty,grpc-okhttp,grpc-protobuf,grpc-protobuf-lite,
+						grpc-api,grpc-auth,grpc-core,grpc-stub,grpc-netty,grpc-okhttp,grpc-protobuf,grpc-protobuf-lite,
 						perfmark-api,
 						error_prone_annotations
 						</Embed-Dependency>
@@ -59,11 +59,6 @@
 	</build>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>de.mhus.lib</groupId>
-			<artifactId>lib-core</artifactId>
-		</dependency>
 
         <dependency>
             <groupId>io.grpc</groupId>
@@ -78,6 +73,11 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-core</artifactId>
+            <version>${grpc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
             <version>${grpc.version}</version>
         </dependency>
         <dependency>
