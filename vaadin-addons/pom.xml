@@ -11,9 +11,15 @@
   <modules>
           <module>ckeditor</module>
           <module>vaadin-ckeditor</module>
+          <!-- 
+          <module>refresher</module>
+          <module>vaadin-refresher</module>
+           -->
 
           <module>easyuploads</module>
           <module>vaadin-easyuploads</module>
+          
+          <module>vaadin-timerextension</module>
   </modules>
 
   <properties>
@@ -60,10 +66,12 @@
     		<groupId>com.vaadin</groupId>
     		<artifactId>vaadin-client-compiler</artifactId>
     	</dependency>
+    	<!-- 
     	<dependency>
     		<groupId>com.vaadin</groupId>
     		<artifactId>vaadin-compatibility-client-compiled</artifactId>
     	</dependency>
+    	 -->
     	<!-- 
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -71,10 +79,12 @@
             <version>${vaadin.version}</version>
         </dependency>
     	 -->
+    	 <!-- 
     	<dependency>
     		<groupId>com.vaadin</groupId>
     		<artifactId>vaadin-compatibility-client</artifactId>
     	</dependency>
+    	  -->
     	<!-- 
         <dependency>
             <groupId>com.vaadin</groupId>
