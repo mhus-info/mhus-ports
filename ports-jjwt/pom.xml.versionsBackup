@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>ports-groovy</artifactId>
+	<artifactId>ports-jjwt</artifactId>
 	<packaging>bundle</packaging>
 	<parent>
 		<groupId>de.mhus.ports</groupId>
-		<version>7.2.0</version>
+		<version>7.2.0-SNAPSHOT</version>
 		<artifactId>mhus-ports</artifactId>
 	</parent>
 
@@ -34,12 +34,15 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							groovy.*;version=${groovy.version},
-							org.codehaus.groovy.*;version=${groovy.version}
+						  io.jsonwebtoken*;version=${jjwt.version}
 						</Export-Package>
 						<Import-Package>*;resolution:=optional</Import-Package>
 						<DynamicImport-Package>*</DynamicImport-Package>
-						<Embed-Dependency>groovy-all</Embed-Dependency>
+		                <Embed-Dependency>
+		                    jjwt-api,
+		                    jjwt-impl,
+		                    jjwt-jackson
+		                </Embed-Dependency>
 						<Embed-Transitive>true</Embed-Transitive>
 					</instructions>
 				</configuration>
@@ -54,10 +57,20 @@
 			<artifactId>lib-core</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-all</artifactId>
-		</dependency>
+	    <dependency>
+	        <groupId>io.jsonwebtoken</groupId>
+	        <artifactId>jjwt-api</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>io.jsonwebtoken</groupId>
+	        <artifactId>jjwt-impl</artifactId>
+	        <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	        <groupId>io.jsonwebtoken</groupId>
+	        <artifactId>jjwt-jackson</artifactId>
+	        <scope>compile</scope>
+	    </dependency>
 
 	</dependencies>
 </project>
