@@ -14,6 +14,8 @@
 
           <module>easyuploads</module>
           <module>vaadin-easyuploads</module>
+
+          <module>vaadin-timerextension</module>
   </modules>
 
   <properties>
