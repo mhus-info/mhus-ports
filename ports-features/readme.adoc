@@ -1,0 +1,7 @@
+
+
+----
+
+feature:repo-add mvn:de.mhus.osgi/ports-features/7.3.0-SNAPSHOT/xml/features
+
+----

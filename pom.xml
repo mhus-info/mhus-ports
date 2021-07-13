@@ -55,6 +55,9 @@
 	    <module>ports-gclib</module>
 	    <module>vaadin-shared-deps</module>
 	    <module>vaadin-addons</module>
+
+	    <module>ports-features</module>
+
     </modules>
     
 </project>
