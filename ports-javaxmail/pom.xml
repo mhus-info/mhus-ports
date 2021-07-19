@@ -49,7 +49,7 @@
 							de.mhus.osgi.mail.core.impl
 						</Private-Package>
 						<Service-Component>*</Service-Component>
-						<Embed-Dependency>mail,activation</Embed-Dependency>
+						<Embed-Dependency>javax.mail-api,activation</Embed-Dependency>
 					</instructions>
 				</configuration>
 			</plugin>
@@ -70,8 +70,8 @@
                 <artifactId>bndlib</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>javax.activation</groupId>
