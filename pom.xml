@@ -42,12 +42,12 @@
 	    <module>ports-common-discovery</module>
     <!-- deprecated
 	    <module>ports-javaxt</module>
+	    <module>ports-javaxmail</module>
+	    <module>ports-flummi</module>
+	    <module>ports-groovy</module>
      -->
 	    <module>ports-jrandtest</module>
 
-	    <module>ports-flummi</module>
-	    <module>ports-groovy</module>
-	    <module>ports-javaxmail</module>
         <module>ports-jjwt</module>
 	    
 	<!-- not changed since 1.3.4
