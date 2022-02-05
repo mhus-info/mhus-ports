@@ -9,6 +9,7 @@
   </parent>
 
   <modules>
+  <!-- 
           <module>ckeditor</module>
           <module>vaadin-ckeditor</module>
 
@@ -16,6 +17,7 @@
           <module>vaadin-easyuploads</module>
 
           <module>vaadin-timerextension</module>
+  -->
   </modules>
 
   <properties>
