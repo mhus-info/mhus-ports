@@ -38,7 +38,6 @@ import java.util.List;
 import java.util.ServiceLoader;
 
 import de.mhus.lib.core.logging.MLogUtil;
-import de.mhus.lib.errors.NotSupportedException;
 import io.jsonwebtoken.lang.Assert;
 
 /**
@@ -104,7 +103,7 @@ public final class Services {
             implementations.add(implementation);
         }
         if (implementations.size() == 0)
-            MLogUtil.log().e(Services.class,"loadAll: Unsupported",spi);
+            MLogUtil.log().e("loadAll: Unsupported", Services.class,spi);
         return implementations;
     }
 
@@ -140,7 +139,7 @@ public final class Services {
         if (serviceLoader.iterator().hasNext()) {
             return serviceLoader.iterator().next();
         }
-        MLogUtil.log().e(Services.class,"loadFirst: Unsupported",spi);
+        MLogUtil.log().e("loadFirst: Unsupported", Services.class,spi);
         return null;
     }
 
